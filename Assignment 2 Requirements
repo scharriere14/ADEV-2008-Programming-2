@@ -1,0 +1,405 @@
+Module 2 Assignment
+
+This assignment will test your knowledge of the following areas:
+
+Coding classes with properties
+Coding a class that inherit from another
+Coding abstract classes
+Throwing exceptions
+Coding static classes
+Contents
+
+Defect Management
+Requirements
+Class Library Project
+Accessories and ExteriorFinish Enumerations
+SalesQuote Class
+Design
+Properties
+Invoice Class
+Design
+Fields
+Properties
+Methods
+CarWashInvoice Class
+Design
+Fields
+Properties
+Methods
+Financial Class
+Design
+Methods
+Program
+Program Class
+Program Requirements
+Output Requirement
+What to Submit
+Due Date
+Evaluation
+Grading
+Introduction
+
+This phase of the project will have you begin development on a Class Library that will become the API for the application you develop later in this course.
+
+Defect Management
+
+Part of the evaluation of this assignment will include your ability to repair defects from previous versions of your code. Ensure that you are applying the feedback provided to you in the assignment evaluations. You should expect to receive deductions on this assignment for any outstanding defects.
+
+Requirements
+
+Class Library Project
+
+Create a new Class Library (.NET Framework) project named LastName.FirstName.Business, where “FirstName” and “LastName” correspond to your first and last names.
+
+Name the Visual Studio Solution RRCAGLibraryFirstNameLastName, where “FirstName” and “LastName” correspond to your first and last names.
+
+Examples
+
+If your name is Dallas Page, the project and solution would be named:
+
+Project: Page.Dallas.Business
+Solution: RRCAGLibraryDallasPage
+DO NOT modify, add or subtract any members to any classes or other constructs.
+Accessories and ExteriorFinish Enumerations
+
+You will need to include the Accessories and ExteriorFinish enumerations you developed in the previous assignment to your library project.
+
+SalesQuote Class
+
+Namespace: Last.First.Business
+
+Create a new class called SalesQuote to the LastName.FirstName.Business project. Follow the new design of this class. You will be able to use much of the code from your previous version.
+
+Design
+SalesQuote
+- vehicleSalePrice : decimal
+- tradeInAmount : decimal
+- salesTaxRate : decimal
+- accessoriesChosen : Accessories
+- exteriorFinishChosen : ExteriorFinish
+
++ <<Property>> VehicleSalePrice : decimal
++ <<Property>> TradeInAmount : decimal
++ <<Property>> AccessoriesChosen : Accessories
++ <<Property>> ExteriorFinishChosen : ExteriorFinish
++ <<Property>> <<Read-only>> AccessoryCost : decimal
++ <<Property>> <<Read-only>> FinishCost : decimal
++ <<Property>> <<Read-only>> TotalOptions : decimal
++ <<Property>> <<Read-only>> SubTotal : decimal
++ <<Property>> <<Read-only>> SalesTax : decimal
++ <<Property>> <<Read-only>> Total : decimal
++ <<Property>> <<Read-only>> AmountDue : decimal
++ SalesQuote(vehicleSalePrice : decimal, tradeInAmount : decimal, salesTaxRate : decimal, accessoriesChosen : Accessories, exteriorFinishChosen : ExteriorFinish)
++ SalesQuote(vehicleSalePrice : decimal, tradeInAmount : decimal, salesTaxRate : decimal)
+Properties
++ VehicleSalePrice : decimal - Gets and sets the sale price of the vehicle.
+
+Exceptions:
+
+ArgumentOutOfRangeException - Thrown when the property is set to less than or equal to 0. Message: “The value cannot be less than or equal to 0.” Parameter Name: “value”
++ TradeInAmount : decimal - Gets and sets the trade in amount.
+
+Exceptions:
+
+ArgumentOutOfRangeException - Thrown when the property is set to less than 0. Message: “The value cannot be less than 0.” Parameter Name: “value”
++ AccessoriesChosen : Accessories - Gets and sets the accessories that were chosen.
+
+Exceptions:
+
+System.ComponentModel.InvalidEnumArgumentException - Thrown when the property is set to an invalid value. Message: “The value is an invalid enumeration value”.
++ ExteriorFinishChosen : ExteriorFinish - Gets and sets the exterior finish that was chosen.
+
+Exceptions:
+
+System.ComponentModel.InvalidEnumArgumentException - Thrown when the property is set to an invalid value. Message: “The value is an invalid enumeration value”.
++ AccessoryCost : decimal - Gets the cost of accessories chosen.
+
++ FinishCost : decimal - Gets the cost of the exterior finish chosen.
+
++ TotalOptions : decimal - Gets the sum of the cost of the chosen accessories and exterior finish (rounded to two decimal places).
+
++ SubTotal : decimal - Gets the sum of the vehicle’s sale price and the Accessory and Finish Cost (rounded to two decimal places).
+
++ SalesTax : decimal - Gets the amount of tax to charge based on the subtotal (rounded to two decimal places).
+
++ Total : decimal - Gets the sum of the subtotal and taxes.
+
++ AmountDue : decimal - Gets the result of subtracting the trade-in amount from the total (rounded to two decimal places).
+
++ SalesQuote(decimal, decimal, decimal, Accessories, ExteriorFinish)
+
+Exceptions:
+
+ArgumentOutOfRangeException - Thrown when the vehicle sale price is less than or equal to 0. Message: “The argument cannot be less than or equal to 0.” Parameter name: “vehicleSalePrice”.
+ArgumentOutOfRangeException - Thrown when the trade in amount is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “tradeInAmount”.
+ArgumentOutOfRangeException - Thrown when the sales tax rate is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “salesTaxRate”.
+ArgumentOutOfRangeException - Thrown when the sales tax rate is greater than 1. Message: “The argument cannot be greater than 1.” Parameter name: “salesTaxRate”.
+System.ComponentModel.InvalidEnumArgumentException - Thrown when the accessories chosen is an invalid argument. Message: “The argument is an invalid enumeration value”.
+System.ComponentModel.InvalidEnumArgumentException - Thrown when the exterior finish chosen is an invalid argument. Message: “The argument is an invalid enumeration value”.
++ SalesQuote(decimal, decimal, decimal)
+
+Exceptions:
+
+ArgumentOutOfRangeException - Thrown when the vehicle sale price is less than or equal to 0. Message: “The argument cannot be less than or equal to 0.” Parameter name: “vehicleSalePrice”.
+ArgumentOutOfRangeException - Thrown when the trade in amount is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “tradeInAmount”.
+ArgumentOutOfRangeException - Thrown when the sales tax rate is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “salesTaxRate”.
+ArgumentOutOfRangeException - Thrown when the sales tax rate is greater than 1. Message: “The argument cannot be greater than 1.” Parameter name: “salesTaxRate”.
+Invoice Class
+
+Namespace: Last.First.Business
+
+This abstract class contains functionality that supports the business process of creating an invoice.
+
+Create the Invoice class in the Library project. This class must be defined under the Last.First.Business namespace.
+
+Design
+Invoice
+- provincialSalesTaxRate : decimal
+- goodsAndServicesTaxRate : decimal
+
++ <<Property>> ProvincialSalesTaxRate : decimal
++ <<Property>> GoodsAndServicesTaxRate : decimal
++ <<Property>> <<Read-only>> ProvincialSalesTaxCharged : decimal
++ <<Property>> <<Read-only>> GoodsAndServicesTaxCharged : decimal
++ <<Property>> <<Read-only>> SubTotal : decimal
++ <<Property>> <<Read-only>> Total : decimal
++ Invoice(provincialSalesTaxRate : decimal, goodsAndServicesTaxRate : decimal)
+Fields
+- provincialSalesTaxRate : decimal - The provincial sales tax rate applied to the invoice.
+
+- goodsAndServicesTaxRate : decimal - The goods and services tax rate applied to the invoice.
+
+Properties
++ ProvincialSalesTaxRate : decimal - Gets and sets the provincial sales tax rate.
+
+Exceptions:
+
+ArgumentOutOfRangeException - Thrown when the property is set to less than 0. Message: “The value cannot be less than 0.” Parameter name: “value”.
+ArgumentOutOfRangeException - Thrown when the property is set to greater than 1. Message: “The value cannot be greater than 1.” Parameter name: “value”.
++ GoodsAndServicesTaxRate : decimal - Gets and sets the goods and services tax rate.
+
+Exceptions:
+
+ArgumentOutOfRangeException - Thrown when the property is set to less than 0. Message: “The value cannot be less than 0.” Parameter name: “value”.
+ArgumentOutOfRangeException - Thrown when the property is set to greater than 1. Message: “The value cannot be greater than 1.” Parameter name: “value”.
++ ProvincialSalesTaxCharged : decimal (Abstract) - Gets the amount of provincial sales tax charged to the customer (Rounded to two decimal places).
+
++ GoodsAndServicesTaxCharged : decimal (Abstract) - Gets the amount of goods and services tax charged to the customer (Rounded to two decimal places).
+
++ SubTotal : decimal (Abstract) - Gets the subtotal of the Invoice.
+
++ Total : decimal - Gets the total of the Invoice. The total is the sum of the subtotal and taxes.
+
+Methods
++ Invoice(decimal, decimal) - Initializes an instance of Invoice with a provincial and goods and services tax rates.
+
+Parameters:
+
+provincialSalesTaxRate - The rate of provincial tax charged to a customer.
+goodsAndServicesTaxRate - The rate of goods and services tax charged to a customer.
+Exceptions:
+
+ArgumentOutOfRangeException - Thrown when the provincial sales tax rate is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “provincialSalesTaxRate”.
+ArgumentOutOfRangeException - Thrown when the provincial sales tax rate is greater than 1. Message: “The argument cannot be greater than 1.” Parameter name: “provincialSalesTaxRate”.
+ArgumentOutOfRangeException - Thrown when the goods and services tax rate is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “goodsAndServicesTaxRate”.
+ArgumentOutOfRangeException - Thrown when the goods and services tax rate is greater than 1. Message: “The argument cannot be greater than 1.” Parameter name: “goodsAndServicesTaxRate”.
+CarWashInvoice Class
+
+This class contains functionality that supports the business process of creating an invoice for the car wash department. The CarWashInvoice class derives from the Invoice class.
+
+Create the CarWashInvoice class in the Library project. This class must be defined under the Last.First.Business namespace.
+
+Design
+CarWashInvoice
+- packageCost : decimal
+- fragranceCost : decimal
++ <<Property>> PackageCost : decimal
++ <<Property>> FragranceCost : decimal
++ <<Property>> <<Read-only>> ProvincialSalesTaxCharged : decimal
++ <<Property>> <<Read-only>> GoodsAndServicesTaxCharged : decimal
++ <<Property>> <<Read-only>> SubTotal : decimal
++ CarWashInvoice(provincialSalesTaxRate : decimal, goodsAndServicesTaxRate : decimal)
++ CarWashInvoice(provincialSalesTaxRate : decimal, goodsAndServicesTaxRate : decimal, packageCost : decimal, fragranceCost : decimal)
+Fields
+- packageCost : decimal - The amount charged for the chosen package.
+
+- fragranceCost : decimal - The amount charged for the chosen fragrance.
+
+Properties
++ PackageCost : decimal - Gets and sets the amount charged for the chosen package.
+
+Exception:
+
+ArgumentOutOfRangeException - Thrown when the property is set to less than 0. Message: “The value cannot be less than 0.” Parameter name: “value”.
++ FragranceCost : decimal - Gets and sets the amount charged for the chosen fragrance.
+
+Exception:
+
+ArgumentOutOfRangeException - Thrown when the property is set to less than 0. Message: “The value cannot be less than 0.” Parameter name: “value”.
++ ProvincialSalesTaxCharged : decimal - Gets the amount of provincial sales tax charged to the customer. No provincial sales tax is charged for a car wash.
+
++ GoodsAndServicesTaxCharged : decimal - Gets the amount of goods and services tax charged to the customer (Rounded to 2 decimal places). The tax is calculated by multiplying the tax rate by the subtotal.
+
++ SubTotal : decimal - Gets the subtotal of the Invoice. The subtotal is the sum of the package and fragrance cost.
+
+Methods
++ CarWashInvoice(decimal, decimal) - Initializes an instance of CarWashInvoice with a provincial and goods and services tax rates. The package cost and fragrance cost are zero.
+
+Parameters:
+
+provincialSalesTaxRate - The rate of provincial tax charged to a customer.
+goodsAndServicesTaxRate - The rate of goods and services tax charged to a customer.
+Exceptions:
+
+ArgumentOutOfRangeException - Thrown when the provincial sales tax rate is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “provincialSalesTaxRate”.
+ArgumentOutOfRangeException - Thrown when the provincial sales tax rate is greater than 1. Message: “The argument cannot be greater than 1.” Parameter name: “provincialSalesTaxRate”.
+ArgumentOutOfRangeException - Thrown when the goods and services tax rate is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “goodsAndServicesTaxRate”.
+ArgumentOutOfRangeException - Thrown when the goods and services tax rate is greater than 1. Message: “The argument cannot be greater than 1.” Parameter name: “goodsAndServicesTaxRate”.
++ CarWashInvoice(decimal, decimal, decimal, decimal) - Initializes an instance of CarWashInvoice with a provincial and goods, services tax rate, package cost and fragrance cost.
+
+Parameters:
+
+provincialSalesTaxRate - The rate of provincial tax charged to a customer.
+goodsAndServicesTaxRate - The rate of goods and services tax charged to a customer.
+packageCost - The cost of the chosen package.
+fragranceCost - The cost of the chosen fragrance.
+Exceptions:
+
+ArgumentOutOfRangeException - Thrown when the provincial sales tax rate is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “provincialSalesTaxRate”.
+ArgumentOutOfRangeException - Thrown when the provincial sales tax rate is greater than 1. Message: “The argument cannot be greater than 1.” Parameter name: “provincialSalesTaxRate”.
+ArgumentOutOfRangeException - Thrown when the goods and services tax rate is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “goodsAndServicesTaxRate”.
+ArgumentOutOfRangeException - Thrown when the goods and services tax rate is greater than 1. Message: “The argument cannot be greater than 1.” Parameter name: “goodsAndServicesTaxRate”.
+ArgumentOutOfRangeException - Thrown when the package cost is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “packageCost”.
+ArgumentOutOfRangeException - Thrown when the fragrance cost is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “fragranceCost”.
+Financial Class
+
+Namespace: Last.First.Business
+
+This static class contains functionality that includes financial functions.
+
+Create the Financial class in the library project. This class must be defined under the Last.First.Business namespace.
+
+Design
+<<static>>
+Financial
++ GetPayment(rate : decimal, numberOfPaymentPeriods : int, presentValue : decimal) : decimal
+Methods
++ GetPayment(decimal, int, decimal) : decimal - Returns the payment amount for an annuity based on periodic, fixed payments and a fixed interest rate.
+
+Parameters:
+
+rate - the interest rate per period. For example, if the rate is an annual percentage rate (APR) of 10 percent and the customer makes monthly payments, the rate per period is 0.1 / 12, or 0.0083.
+numberOfPaymentPeriods - the total number of payment periods in the annuity. For example, if you make monthly payments on a four-year car loan, your loan has a total of 4 × 12 (or 48) payment periods.
+presentValue - the present value (or lump sum) that a series of payments to be paid in the future is worth now. For example, when a customer finances a car, the loan amount is the present value to the lender of the car payments the customer will make.
+Exceptions:
+
+ArgumentOutOfRangeException - Thrown when the rate is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “rate”.
+ArgumentOutOfRangeException - Thrown when the rate is greater than 1. Message: “The argument cannot be greater than 1.” Parameter name: “rate”.
+ArgumentOutOfRangeException - Thrown when the number of payments is less than or equal to zero. Message: “The argument cannot be less than or equal to 0.” Parameter name: “numberOfPaymentPeriods”.
+ArgumentOutOfRangeException - Thrown when the present value is less than or equal to zero. Message: “The argument cannot be less than or equal to 0.” Parameter name: “presentValue”.
+The implementation for the GetPayment() method is:
+
+decimal futureValue = 0;
+decimal type = 0;
+decimal payment = 0;
+
+if (rate == 0)
+    payment = presentValue / numberOfPaymentPeriods;
+else
+    payment = rate * (futureValue + presentValue * (decimal)Math.Pow((double)(1 + rate), (double)numberOfPaymentPeriods)) / (((decimal)Math.Pow((double)(1 + rate), (double)numberOfPaymentPeriods) - 1) * (1 + rate * type));
+
+return Math.Round(payment, 2);
+Program
+
+Create a new Console App (.NET Framework) Project. Name the project LastName.FirstName.RRCAGTests, where “FirstName” and “LastName” correspond to your first and last names.
+
+Name the Visual Studio Solution Assignment2FirstNameLastName, where “FirstName” and “LastName” correspond to your first and last names.
+
+Examples
+
+If your name is Dallas Page, the project and solution would be named:
+
+Project: Page.Dallas.RRCAGTests
+Solution: Assignment2DallasPage
+Copy the LastName.FirstName.Business.dll from the other Visual Studio solution (RRCAGLibraryFirstNameLastName - created above) and put it in the Debug/bin directory of your Console Application. Add a reference to the library (LastName.FirstName.Business.dll) in order to access the library classes.
+
+Program Class
+The Program class is generated when you created the Console App (.NET Framework) Project template. Ensure the Program class is in the LastName.FirstName.RRCAGTests namespace.
+
+Program Requirements
+Your program will include implementation to test the following members of the Financial class:
+
++ GetPayment(decimal, int, decimal) : decimal
+For each method (unit) being tested, ensure your client program provides output clearly describing the method being tested, along with the expected and actual result.
+
+Each unit test will be written in its own method. Not writing your unit tests in methods will not earn you credit on the assignment.
+Each unit test method will test one outcome only.
+Each unit test method will be named using the standard outlined in the course material.
+When a test fails (actual does not match the expected), correct the method code, then re-test. Keep in mind that a poorly written test can produce inaccurate test results. If a test fails, ensure you have written the test correctly before modifying your unit code.
+Output Requirement
+For each method (unit) being tested, output the method signature.
+
+For each test, output the following:
+
+Test number
+Outcome description
+Expected result
+Actual result
+Leave one blank line between each test.
+
+Sample Output Format
+
+Testing method GetPayment(decimal, int, decimal)
+
+Test 1
+Expected: The argument cannot be less than 0. Parameter name: rate
+Actual: The argument cannot be less than 0. Parameter name: rate
+
+Test 2
+Expected: 526.23
+Actual: 526.23
+DO NOT use keyboard input. Hard code all test values.
+
+If a method has more than one outcome, you will require a test for each outcome. Ensure you indicate the test number for each test.
+
+Avoid creating additional methods to reduce repetition in your test application. It is expected that some lines of code will be duplicated.
+
+What to Submit
+
+Your assignment will be submitted as a .zip file and will contain one or more Visual Studio solution directories. Name the .zip file using the following naming format:
+
+adev-2008_firstname_lastname_assignment_2.zip
+The “firstname” and “lastname” parts of the file name will be substituted with your first and last names.
+
+Each Visual Studio solution is saved to its own directory (referred to as the Solution Directory). Your submission must follow the directory structure as seen below.
+
+Directory Structure
+
+adev-2008_firstname_lastname_assignment_2.zip
+├── RRCAGLibraryFirstNameLastName  
+└── Assignment2FirstNameLastName
+Due Date
+
+The due date for the assignment can be found in the Dropbox folder for this assignment.
+
+If you are unsure of the due date, ask the instructor to avoid not submitting your assignment by the due date.
+
+Evaluation
+
+A rubric is used to grade your assignment. Review the rubric before and after completing the assignment. You can find the rubric in the Dropbox for this assignment.
+
+Grading
+
+The weight of this assignment can be found in the Course Outline and the Grade tool in Learn.
+
+Assignment Improvement Option
+
+After the evaluation of an assignment, you have the opportunity within one week of the due date to fix any defects in your assignment for a grade improvement of up to 20%. For example, if you received a grade of 60% on an assignment, you could fix the problems, add missing functionality, etc. and improve your grade up to 80%.
+
+Caveats:
+
+The Assignment Improvement Option is not available to assignments not submitted by the due date.
+You must achieve a grade of at least 35% on your initial submission.
+You must include a detailed list of improvements for each source code file. Ensure you have the original version of the files, as you may be asked to show it for comparison.
+You will only get one attempt to improve your grade.
+ 
