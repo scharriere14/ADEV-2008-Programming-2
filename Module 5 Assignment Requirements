@@ -1,0 +1,379 @@
+Module 5 Assignment
+
+This assignment will test your knowledge of the following areas:
+
+Creating Windows Form Application Project
+Designing Forms
+Working with controls
+Event-driven programming
+Contents
+
+Defect Management
+Resources
+Requirements
+Windows Forms Application
+Project Configuration
+Libraries
+Programming Requirement
+Form Design Images
+Main Form
+Initial State
+Menu Strip Design
+Structure
+File Menu
+Open Menu
+Data Menu
+About Menu
+Menu Strip Functionality
+Sales Quote Menu Item
+Car Wash Menu Item
+Exit Menu Item
+Vehicles Menu Item
+About Menu Item
+About Form
+Sales Quote Form
+Form Initial State
+Tab Order
+Number of Years Input
+Annual Interest Rate Input
+Amount Due and Monthly Payment Output Labels
+Textbox Input Error Checking
+Calculating Vehicle Sales Quote
+Textbox Text Changes
+Accessories and Exterior Finish Changes
+Number of Years and Annual Interest Rate Changes
+Form Reset
+Car Wash Form
+Vehicle Data Form
+Testing
+What to Submit
+Due Date
+Evaluation
+Grading
+Introduction
+
+This phase of the project will have you begin development on the Windows application. This application will require you to use parts of the class library you developed in previous phases of this project.
+
+Defect Management
+
+Part of the evaluation of this assignment will include your ability to repair defects from previous versions of your code. Ensure that you are applying the feedback provided to you in the assignment evaluations. You should expect to receive deductions on this assignment for any outstanding defects.
+
+Resources
+
+To complete this phase of the project, you will need to download the assignment file(s) from here.
+
+Contents
+
+ACE.BIT.ADEV.xml - The XML documentation for the ACE.BIT.ADEV.dll Class Library assembly.
+ACE.BIT.ADEV.Documentation.chm - The HTML Help file that contains the API documentation for the the ACE.BIT.ADEV.dll Class Library.
+ACE.BIT.ADEV.dll - The ACE.BIT.ADEV.dll Class Library assembly.
+Requirements
+
+Windows Forms Application
+
+Create a new Windows Forms App (.NET Framework) Project. Name the project LastName.FirstName.RRCAGApp, where “FirstName” and “LastName” correspond to your first and last names.
+
+Name the Visual Studio Solution RRCAGAppFirstNameLastName, where “FirstName” and “LastName” correspond to your first and last names.
+
+Examples
+
+If your name is Dallas Page, the project and solution would be named:
+
+Project: Page.Dallas.RRCAGApp
+Solution: RRCAGAppDallasPage
+Project Configuration
+
+Configure your project to build as a 64-bit application.
+
+To set your project to compile as 64-bit:
+
+Right-click the Project node in the Solution Explorer.
+Choose Properties from the context menu.
+Click the Build tab on the left hand side of the properties window.
+Change the Platform target from “Any PC” to “x64”.
+Save the project and close the properties window.
+Project Properties
+
+Libraries
+
+Your Windows Forms App project will need a reference to your LastName.FirstName.Business library developed in the previous assignment.
+
+You will also need to add a reference to the ACE.BIT.ADEV.dll that was included in the provided resources. This library contains classes you will need to complete this assignment and future assignments.
+
+Programming Requirement
+
+All event subscriptions and handling must be coded by you in the form class (not the Designer file using the Form Designer and/or Events panel).
+
+Form Design Images
+
+The Window’s theme used for your operating system may differ from the theme used in design screenshots. You are not required to match the theme used in the screenshot.
+
+Main Form
+
+The Main Form is the startup Form for the application and is used to open all other Forms in the application.
+
+Main Form Design
+
+The styling of the form’s title bar is dictated by the theme chosen in Windows. DO NOT try to match the style of title bar in your assignment.
+
+Initial State
+The form is an MDI container.
+Menu Strip docked to the top of the Form.
+Title of the form set to “RRC Automotive Group”
+When the form is shown, its window state is maximized.
+Menu Strip Design
+Structure
+
+File (“F” is the keyboard accessor)
+Open (“O” is the keyboard accessor)
+Sales Quote (“S” is the keyboard accessor, Ctrl+1 is the keyboard shortcut)
+Car Wash (“C” is the keyboard accessor, Ctrl+2 is the keyboard shortcut)
+Separator Bar
+Exit (“x” is the keyboard accessor, Alt+F4 is the keyboard shortcut)
+Data (“D” is the keyboard accessor)
+Vehicle (“V” is the keyboard accessor, Ctrl+Shift+V is the keyboard shortcut)
+Help (“H” is the keyboard accessor)
+About… (“A” is the keyboard accessor)
+File Menu
+
+File Menu
+
+Open Menu
+
+Open Menu
+
+Data Menu
+
+Data Menu
+
+About Menu
+
+Help Menu
+
+Menu Strip Functionality
+The menu strip items must be named properly. Menu items must include keyboard accessors and keyboard shortcuts, as outlined above.
+
+Sales Quote Menu Item
+
+When the Sales Quote menu item is clicked, an instance of the Sales Quote Form is shown within the MDI container.
+
+Car Wash Menu Item
+
+When the Car Wash menu item is clicked, an instance of the Car Wash Form is shown within the MDI container. See the “Car Wash Form” section below for more information.
+
+Exit Menu Item
+
+When the Exit menu item is clicked, the Main Form closes (ending the application).
+
+Vehicles Menu Item
+
+When the Vehicles menu item is clicked, one of two things wil happen:
+
+If an instance of the Vehicle Data Form does not exist, create the form and open it within the MDI form.
+If an instance of the Vehicle Data Form already exists, activate the form. Activating the form will set focus to the form within the MDI form.
+This means that there should only ever be one instance of the Vehicle Data Form created. The user will not be able to open more than one instance of this form within the MDI form.
+
+See the “Vehicle Data Form” section below for more information.
+
+About Menu Item
+
+When the About menu item is clicked, an instance of the About Form is shown as a modal window.
+
+About Form
+
+The About Form is used to display information about the application (Assembly).
+
+About Form Design
+
+Title: RRC Automotive Group
+Description: Write one sentence that describes your experience in this course.
+Company: Your first and last name.
+Product: Automotive Management System
+Copyright: Ensure the copyright year is the current year.
+Sales Quote Form
+
+Design the Sales Quote Form to match the following design:
+
+Sales Quote Form Design
+
+Form Initial State
+The Form will have the following initial state:
+
+The title of the Form is “Vehicle Sales Quote”.
+The Form cannot be maximized.
+The Form (window) cannot be resized by the user.
+The vehicle sales price Textbox has no input (blank) and has focus.
+The trade in value Textbox is input is set to 0 (zero).
+No accessories are chosen.
+Standard exterior finish is chosen.
+The summary output labels are blank, and the text is middle-right aligned.
+The sales tax description Label’s text is set to the following format: “Sales Tax ({rate})”, where the “rate” is the sum of the Provincial Sales Tax in Manitoba and the Goods and Services Tax for Canada formatted as a percentage (ex. 12%).
+
+Sales Tax Label
+
+If you don’t know what the current tax rates are, you will need to look them up.
+
+The number of financing years is set to 1.
+The annual interest rate is set to 5%.
+The monthly payment Label is blank, and the text is middle-center aligned.
+Error icons are not visible.
+The calculate quote button is the accept (default) button for the Form.
+An instance of the SalesQuote class is not in memory.
+Tab Order
+Sales Quote Form Tab Order
+
+Number of Years Input
+The number of years input will be configured as follows:
+
+Minimum value: 1
+Maximum value: 10
+Increment: 1
+Annual Interest Rate Input
+The annual interest rate input will be configured as follows:
+
+Minimum value: 0
+Maximum value: 25
+Two decimal places
+Increment: .25
+Amount Due and Monthly Payment Output Labels
+The background color of these labels are GradientActiveCaption.
+
+Textbox Input Error Checking
+When the Calculate Quote button is clicked the Textbox input is error checked. When an input error is found, an error icon will be displayed to the right of the control with a padding of 3. If both Textbox inputs have errors, each Textbox will display an error icon.
+
+Input Errors
+
+The icon will not blink and will display the following error messages.
+
+Vehicle Sale Price
+
+The error checking information listed below is ordered by priority.
+Error message when there is no input: Vehicle price is a required field.
+
+Error message when the input is not numeric: Vehicle price cannot contain letters or special characters.
+
+Error message when the input is less than or equal to zero: Vehicle price cannot be less than or equal to 0.
+
+Trade-in Value
+
+The error checking information listed below is ordered by priority.
+Error message when there is no input: Trade-in value is a required field.
+
+Error message when the input is not numeric: Trade-in value cannot contain letters or special characters.
+
+Error message when the input is less than zero: Trade-in value cannot be less than 0.
+
+Error message when the input is greater than the vehicle sale price (Note: This error check should only happen when the vehicle sale price is free of errors.): Trade-in value cannot exceed the vehicle sale price.
+
+Calculating Vehicle Sales Quote
+When all inputs are free of errors, a new Sales Quote will be created. The Sales Quote data will be displayed to the Summary and Finance output controls.
+
+The Summary and Finance output will be formatted as:
+
+Vehicle Sale Price (Currency)
+Options (Number)
+Subtotal (Currency)
+Sales Tax Amount (Number)
+Total (Currency)
+Trade-in: (Negative Number)
+Amount Due: (Currency)
+Monthly Payment (Currency)
+Options output displays the cost of the Accessories and Exterior Finish chosen.
+
+Sales Quote Created
+
+Textbox Text Changes
+When the text within the Vehicle Sales Price or Trade-In Value changes, the following must occur:
+
+Clear the output labels in the Summary section of the form.
+Clear the Monthly Payment Label in the Finance section of the form.
+The created Sales Quote is removed from memory.
+Sample
+
+The animation below demonstrates how changing the text of the TextBoxes clears the summary and monthly payment output labels.
+
+TextBox Text Changes
+
+Accessories and Exterior Finish Changes
+When an accessory or exterior finish is selected, and a sales quote has been created, the summary and monthly payment output will be updated to reflect the input change.
+
+If a sales quote has not been created, no UI update are made.
+
+Number of Years and Annual Interest Rate Changes
+When the number of years or annual interest rate is changed, and a sales quote has been created, the monthly payment output will be updated to reflect the new input value.
+
+If a sales quote has not been created, no UI update are made.
+
+Samples
+
+The animation below demonstrates how changing the inputs while a Sales Quote is not created does not update the summary and monthly payment output.
+
+Input changes with no Sales Quote created
+
+The animation below demonstrates how changing the inputs while a Sales Quote is created updates the summary and monthly payment output.
+
+Input changes with a Sales Quote created
+
+Form Reset
+When the Reset button is clicked, a dialog box is displayed to the user to confirm the action. The dialog box will display as:
+
+Text: Do you want to reset the form?
+Caption: Reset Form
+Buttons: Yes/No
+Icon: Warning
+Default Button: No
+Reset Form
+
+If the “Yes” button is clicked, the form and its controls will be reset back to their initial states (see Form Design and Initial State above).
+
+Resetting the form does not involve creating a new instance of the form.
+Car Wash Form
+
+Add a new class (Use the “Class” or “Code File” template) to your project that will represent the Car Wash Form. This class will derive from the base class ACE.BIT.ADEV.Forms.CarWashForm. The functionality of this Form will be developed in a future version of the application.
+
+Vehicle Data Form
+
+Add a new class (Use the “Class” or “Code File” template) to your project that will represent the Vehicle Data Form. This class will derive from the base class ACE.BIT.ADEV.Forms.VehicleDataForm. The functionality of this Form will be developed in a future version of the application.
+
+Testing
+
+Ensure the application is fully tested before user acceptance testing (UAT). Developing a list of test cases (test plan) prior to testing will help eliminate missing tests.
+
+What to Submit
+
+Your assignment will be submitted as a .zip file and will contain one or more Visual Studio solution directories. Name the .zip file using the following naming format:
+
+adev-2008_firstname_lastname_assignment_5.zip
+The “firstname” and “lastname” parts of the file name will be substituted with your first and last names.
+
+Each Visual Studio solution is saved to its own directory (referred to as the Solution Directory). Your submission must follow the directory structure as seen below.
+
+Directory Structure
+
+adev-2008_firstname_lastname_assignment_5.zip
+├── RRCAGLibraryFirstNameLastName
+└── RRCAGAppFirstNameLastName
+Due Date
+
+The due date for the assignment can be found in the Dropbox folder for this assignment.
+
+If you are unsure of the due date, ask the instructor to avoid not submitting your assignment by the due date.
+
+Evaluation
+
+A rubric is used to grade your assignment. Review the rubric before and after completing the assignment. You can find the rubric in the Dropbox for this assignment.
+
+Grading
+
+The weight of this assignment can be found in the Course Outline and the Grade tool in Learn.
+
+Assignment Improvement Option
+
+After the evaluation of an assignment, you have the opportunity within one week of the due date to fix any defects in your assignment for a grade improvement of up to 20%. For example, if you received a grade of 60% on an assignment, you could fix the problems, add missing functionality, etc. and improve your grade up to 80%.
+
+Caveats:
+
+The Assignment Improvement Option is not available to assignments not submitted by the due date.
+You must achieve a grade of at least 35% on your initial submission.
+You must include a detailed list of improvements for each source code file. Ensure you have the original version of the files, as you may be asked to show it for comparison.
+You will only get one attempt to improve your grade.
