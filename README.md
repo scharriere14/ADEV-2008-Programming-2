@@ -6,7 +6,11 @@ Welcome to the ADEV-2008 Assignments Repository. This repository contains a sele
 ## Important Notes
 - **For Review and Understanding Only**: The codes in this repository are intended for review purposes and to give a basic idea of how the assignments are structured. They are not meant to be copied directly for your assignments.
 - **Academic Integrity**: It's crucial to adhere to your institution's academic integrity policy when utilizing this repository. Directly copying code for your assignments can result in severe academic consequences.
-- **Updates and Accuracy**: While effort is made to keep the repository up-to-date, the owner does not guarantee the accuracy or completeness of the code.
+
+## Disclaimer
+- The information and code in this repository are provided for educational purposes only. The owner of this repository does not condone plagiarism or academic dishonesty.
+- **I do not take any responsibility if copying my code leads to academic issues, including receiving a grade of 0 or other sanctions.** It's your responsibility to use these resources ethically and within the guidelines of your academic institution.
+- While effort is made to keep the repository up-to-date, the owner does not guarantee the accuracy or completeness of the code.
 
 ## Final Grades and Improvement Suggestions
 Below is the final grade received for each assignment along with suggestions for improvement:
