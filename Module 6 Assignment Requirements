@@ -1,0 +1,285 @@
+Module 6 Assignment
+
+This assignment will reinforce your knowledge of the following areas:
+
+Working with Files
+Data Binding
+Contents
+
+Defect Management
+Resources
+Requirements
+Fragrance Data File
+Main Form
+Car Wash Form
+Programming Requirements
+Form Design
+Initial State
+Data Binding
+Errors During Initialization
+Car Wash Form Functionality
+Package ComboBox
+Interior Services by Package
+Exterior Services by Package
+Packages and Prices
+Fragrance ComboBox
+Menu Strip
+Close Menu Item
+Generate Invoice Menu Item
+Car Wash Invoice Form
+Initial State
+Data Binding
+Car Wash Invoice Form Closed
+Programming Requirements
+Testing
+What to Submit
+Due Date
+Evaluation
+Grading
+Introduction
+
+This phase of the project will have to modify the Sales Quote Form and begin development on the car wash portion of the application.
+
+Defect Management
+
+Part of the evaluation of this assignment will include your ability to repair defects from previous versions of your code. Ensure that you are applying the feedback provided to you in the assignment evaluations. You should expect to receive deductions on this assignment for any outstanding defects.
+
+Resources
+
+To complete this phase of the project, you will need to download the assignment file(s) from here.
+
+Contents
+
+fragrances.txt - The fragrances data file.
+Requirements
+
+Fragrance Data File
+
+An external data file will be used in this phase of the project for loading data externally into the application. The data contains information about the fragrances used for the interior car wash service. This file must be located in the same directory as the applications assembly. DO NOT alter the structure of this file.
+
+Main Form
+
+Opening an instance of the Car Wash Form was completed in the previous version of the project. If an exception occurs during the initialization of the Car Wash Form, the form instance will not be shown in the MDI parent form.
+
+Car Wash Form
+
+Programming Requirements
+The functionality of this form must be written in a way that allows for changes to the external data without having to update the code that uses the data. Store the external data in one or more collections.
+
+Do not use Form Designer to load data into the list controls.
+
+The data for Packages (including interior and exterior) can be “hard coded” in the Form class. The Packages data will be stored in collection(s) during the construction of the Form object.
+
+The Fragrance data will be read in from the provided file.
+
+You may use the ACE.BIT.ADEV.CarWash.CarWashItem structure and ACE.BIT.ADEV.CarWash.Package to complete this assignment.
+
+Form Design
+The design of the Car Wash Form was completed in the base class. You will need to set the initial state of the Form and include the functionally described below. Your derived Car Wash Form class will have access to all the necessary base class fields to reference the Form’s controls.
+
+Initial State
+
+The form will have the following initial state:
+
+The title of the form is “Car Wash”.
+The “Generate Invoice” menu item is disabled.
+the Form size matches the screenshot below.
+The Package is populated with package data from collections in your code (see Packages and Prices section). Text cannot be entered into this control.
+The Fragrance ComboBox is populated with data from the fragrances data file. The items in the ComboBox will be displayed in alphabetical order. Text cannot be entered into this control.
+The Package ComboBox has no item selected.
+The Fragrance ComboBox has “Pine” selected.
+The ListBox controls in the Services Group Box contain no items.
+The Subtotal, Taxes and Total output labels are blank, as there is no Car Wash Invoice instance when the Form is initialized.
+The Labels are formatted as:
+Subtotal: Currency
+PST: Number to two decimal places
+GST: Number to two decimal places
+Total: Currency
+Car Wash Form Design
+
+Car Wash Form Initial State
+
+Car Wash Form Package Initial State
+
+Car Wash Form Initial State - Packages
+
+Car Wash Form Fragrance Initial State
+
+Car Wash Form Initial State - Fragrances
+
+Data Binding
+The following controls on the form must be data bound:
+
+Package ComboBox
+Fragrance ComboBox
+Interior ListBox
+Exterior Listbox
+Subtotal, GST, PST, Total output Labels
+Errors During Initialization
+When the fragrance data file does not exist at the intended path, display the following MessageBox:
+
+Data File Error Dialog Window
+
+If any other exception occurs while loading the data from the file, display the following MessageBox:
+
+Data File Read Error Dialog
+
+Car Wash Form Functionality
+When a customer makes an appointment for a car wash service, the Car Wash Form is used for determining payment and invoicing. The form has two inputs:
+
+Package ComboBox
+The package the customer chooses for their car wash will be selected by the user using the ComboBox control labelled “Package”. The package ComboBox is an input control for the price of the package and is also used to determine the interior and exterior services performed during the car wash. The interior and exterior services are output to the ListBox controls.
+
+When an item is selected in this control, the following must happen:
+
+Update the ListBoxes in the Services GroupBox. The tables below outline the items to be included in the ListBoxes for each package selection.
+Update the subtotal, taxes charged (GST and PST) and total output Labels on the Form.
+Enable the “Generate Invoice” menu item.
+When a Package is selected, a car wash invoice is created and the Subtotal, Provincial Sales Tax Charged, Goods and Services Tax Charged and Total are output to the appropriate Labels. All subsequent selections will update the car wash invoice and thus update the output Labels.
+
+Interior Services by Package
+Description	Standard	Deluxe	Executive	Luxury
+Fragrance - [selected_fragrance_text]	X	X	X	X
+Shampoo Carpets		X	X	X
+Shampoo Upholstery			X	X
+Interior Protection Coat				X
+Exterior Services by Package
+Description	Standard	Deluxe	Executive	Luxury
+Hand Wash	X	X	X	X
+Hand Wax		X	X	X
+Wheel Polish			X	X
+Detail Engine Compartment				X
+Packages and Prices
+Description	Price
+Standard	$7.50
+Deluxe	$15.00
+Executive	$35.00
+Luxury	$55.00
+
+
+Sample Output
+
+Package Selections
+
+Fragrance ComboBox
+An interior odor replacement service is provided with each car wash. The complimentary fragrance for the odor replacement is Pine. A customer may choose another fragrance, which may have a cost associated with it. The fragrance the customer chooses will be selected using the Fragrance ComboBox control labelled “Fragrance”. The fragrance ComboBox is an input control for the price of the fragrance and is also used to update first item in the interior services ListBox.
+
+The Fragrance ComboBox will be bound to the data from the data file and will also include the fragrance “Pine”. The price for the Pine fragrance is $0.00.
+
+When an item is selected in this control, the following must happen:
+
+Update the first item in the interior services ListBox to include the selected fragrance.
+Update the subtotal, taxes charged (GST and PST) and total output Labels on the Form.
+Sample Output
+
+Fragrance Selections
+
+The red rectangle in the animation above is to highlight the first item in the interior services ListBox. This is not part of the application requirements.
+
+Menu Strip
+The base class Form contains a menu strip that is designed to merge with the menu strip of the MDI container when the Car Wash form is opened within main Form.
+
+Menu Merge
+
+Close Menu Item
+File Menu
+
+The Close menu item is added to the MDI containers MenuStrip as a child item under “File”. When the Close menu item is clicked, the form will close.
+
+Generate Invoice Menu Item
+Tools Menu
+
+The Tools menu item is added to the MDI containers MenuStrip as a sibling item after the “Data” menu item.
+
+When the Generate Invoice menu item is clicked, an instance of the Car Wash Invoice Form (see below) will appear, displaying data from the entry form. The invoice form will be opened as a modal window.
+
+Car Wash Invoice Form
+
+The Car Wash Invoice Form derives from the base Form ACE.BIT.ADEV.Forms.CarWashInvoiceForm. The car wash form will display information about a car wash invoice.
+
+Initial State
+The form will have the following initial state:
+
+The title of the form is “Car Wash Invoice”.
+Resize the form to match the screenshot (if necessary).
+The Car Wash Invoice information is bound to data from the invoice object.
+The Car Wash Invoice information displayed and formatted as:
+Package Price: Currency
+Fragrance Price: Number
+Subtotal: Currency
+PST: Number
+GST: Number
+Total: Currency
+Data Binding
+The following controls on the form must be data bound:
+
+Package Price
+Fragrance Price
+Subtotal
+Provincial Sales Tax
+Goods and Services Tax
+Total
+Sample Output
+
+Car Wash Invoice Form Sample
+
+Car Wash Invoice Form Closed
+When the Car Wash Invoice Form is closed, the Car Wash Form will be set back to it’s original state.
+
+Car Wash Invoice Form Closed
+
+Programming Requirements
+
+Your program must use data binding to populate controls with data. Data bound controls are outlined in the requirements.
+
+Your program must use the provided data from a file for fragrance data. Optionally, you could also use a data file for Packages.
+
+All event subscriptions and handling must be coded by you in the form class (not the Designer file).
+
+Tax rates will reflect the current tax rates in Manitoba, Canada.
+
+Note: The screen captures above may not reflect the current tax rates.
+Testing
+
+Ensure the application is fully tested before user acceptance testing (UAT). Developing a list of test cases prior to testing will help eliminate missing tests.
+
+Unit testing is not required, but is something you can do with form classes.
+
+What to Submit
+
+Your assignment will be submitted as a .zip file and will contain one or more Visual Studio solution directories. Name the .zip file using the following naming format:
+
+adev-2008_firstname_lastname_assignment_6.zip
+The “firstname” and “lastname” parts of the file name will be substituted with your first and last names.
+
+Each Visual Studio solution is saved to its own directory (referred to as the Solution Directory). Your submission must follow the directory structure as seen below.
+
+Directory Structure
+
+adev-2008_firstname_lastname_assignment_6.zip
+├── RRCAGLibraryFirstNameLastName
+└── RRCAGAppFirstNameLastName
+Due Date
+
+The due date for the assignment can be found in the Dropbox folder for this assignment.
+
+If you are unsure of the due date, ask the instructor to avoid not submitting your assignment by the due date.
+
+Evaluation
+
+A rubric is used to grade your assignment. Review the rubric before and after completing the assignment. You can find the rubric in the Dropbox for this assignment.
+
+Grading
+
+The weight of this assignment can be found in the Course Outline and the Grade tool in Learn.
+
+Assignment Improvement Option
+
+After the evaluation of an assignment, you have the opportunity within one week of the due date to fix any defects in your assignment for a grade improvement of up to 20%. For example, if you received a grade of 60% on an assignment, you could fix the problems, add missing functionality, etc. and improve your grade up to 80%.
+
+Caveats:
+
+The Assignment Improvement Option is not available to assignments not submitted by the due date.
+You must achieve a grade of at least 35% on your initial submission.
+You must include a detailed list of improvements for each source code file. Ensure you have the original version of the files, as you may be asked to show it for comparison.
+You will only get one attempt to improve your grade.
