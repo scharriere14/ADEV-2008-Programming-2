@@ -1,0 +1,240 @@
+Module 7 Assignment
+
+This assignment will reinforce your knowledge of the following areas:
+
+Working with ADO.net provider objects
+Working with a DataSet
+Working with the DataGridView control
+Contents
+
+Introduction
+Defect Management
+Resources
+Requirements
+Vehicle Data Form
+Initial State
+Menu Strip Design and Functionality
+Save Menu Item
+Close Menu Item
+Remove Menu Item
+Form Initialization
+DataGridView Selection Changed
+DataGridView Cell Value Changed
+Remove Menu Item Clicked
+Save Menu Item Clicked
+Form Closing
+Other Considerations
+Closing the Main Form
+Inserting a New Vehicle
+Programming Requirements
+Testing
+What to Submit
+Due Date
+Evaluation
+Grading
+Introduction
+
+The last phase of the project will require you to add functionality to the Vehicle Data Form to manipulate data from a database.
+
+It is highly recommended that you back up your solution prior to making major modifications to an existing code set.
+
+Defect Management
+
+Part of the evaluation of this assignment will include your ability to repair defects from previous versions of your code. Ensure that you are applying the feedback provided to you in the assignment evaluations. You should expect to receive deductions on this assignment for any outstanding defects.
+
+Resources
+
+To complete this phase of the project, you will need to download the assignment file(s) from here.
+
+Contents
+
+AMDatabase.mdb - The Microsoft Access database used in this application.
+Requirements
+
+Vehicle Data Form
+
+The vehicle data form displays vehicle data from the database.
+
+Vehicle Data Form Design
+
+Initial State
+Save menu item disabled
+Delete menu item disabled
+Title of the form is Vehicle Data.
+The Form is maximized within the MDI container.
+DataGridView
+Disable the ability for users to delete rows.
+Disable the ability for users to resize rows.
+Auto size columns using Fill mode.
+Disable the ability for users to select multiple rows.
+Populated with all the vehicle data from the database.
+Menu Strip Design and Functionality
+The base class Form contains a menu strip that is designed to merge with the menu strip of the MDI container when the Car Wash form is opened within main Form.
+
+File Menu
+
+File Menu
+
+Save Menu Item
+When the Save menu item is clicked, all data changes are saved to the database. After a successful save, the Save menu item is disabled.
+
+Close Menu Item
+When the Close menu item is clicked, close the Form.
+
+Edit Menu
+
+Edit Menu
+
+Remove Menu Item
+When the Remove menu item is clicked, the selected row is removed from the DataGridView.
+
+Form Initialization
+When an instance of the Vehicle Data Form is initialized, all vehicle data from the VehicleStock table is retrieved and data bound to the DataGridView control on the form. When any exception is thrown during initialization, the form should not be shown. Show a dialog box with the following information:
+
+Text: Unable to load vehicle data.
+Caption: Data Load Error
+Buttons: Ok
+Icon: Error
+Data Load Error
+
+When vehicle data is successfully retrieval from the database:
+
+Display the vehicle data in the DataGridView control.
+Hide the “ID” and “SoldBy” columns in the DataGridView.
+Sample Output
+
+Vehicle Data Form Sample
+
+Note: This sample demonstrates the Vehicle Data Form opened within the MDI container Form.
+
+DataGridView Selection Changed
+When a selection change is made to the DataGridView and the current row is selected (which is not a new row), enable the Remove menu item. If the current row is not selected or is a new row, disable the Remove menu item.
+
+To select a row in a DataGridView, click the row header cell.
+
+Section Changed
+
+DataGridView Cell Value Changed
+When a cell value has changed in the DataGridView, apply the DataGridView changes to the data source (DataTable). If the data was changed:
+
+Set the title of the form to “* Vehicle Data”. The asterisk indicates to the user that a change was made to the data.
+Enable the save menu item.
+Data Changed Title Indicator
+
+Demonstrates the title of the form when data has been changed.
+
+Remove Menu Item Clicked
+When the Remove menu item is clicked, show a dialog box with the following information:
+
+Text: Remove stock item {stock_item}?
+Caption: Remove Stock Item
+Buttons: Yes and No
+Icon: Warning
+Default button: No
+Remove Stock Item Dialog Window
+
+If the user chooses “No”, no action will take place.
+If the user chooses “Yes”
+Remove the row from the DataGridView.
+Set the title of the form to “* Vehicle Data”.
+Enable the save menu item.
+Save Menu Item Clicked
+When the save menu item is clicked, attempt to save the changes to the database. When any exception occurs, show a dialog box with the following information:
+
+Text: An error occurred while saving the changes to the vehicle data.
+Caption: Save Error
+Buttons: Ok
+Icon: Error
+Save Error Dialog Window
+
+On a successful save, set the title of the form back to “Vehicle Data” and disable the Save menu item.
+
+Form Closing
+Before the Form is closed and there has been changes to the data, display a dialog box with the following information:
+
+Text: Do you wish to save the changes?
+Caption: Save
+Buttons: Yes, No, and Cancel
+Icon: Warning
+Default button: Cancel
+Save Changes Dialog Window
+
+If the user chooses “Cancel”, prevent the Form from closing.
+If the user chooses “No”, allow the Form to close.
+If the user chooses “Yes”, attempt to save the changes to the database.
+If the form is closing and there are no outstanding changes to the data, the dialog window above will not appear.
+If any exception occurs, show a dialog box with the following information:
+
+Text: An error occurred while saving the changes. Do you still wish to close?
+Caption: Save Error
+Buttons: Yes and No
+Icon: Error
+Default button: No
+Save Error Dialog Window
+
+If the user chooses “Yes”, close the Form. If the user chooses “No”, prevent the form from closing.
+
+Other Considerations
+
+Closing the Main Form
+Closing the Main Form will cause the Vehicle Data Form to close. Preventing the Vehicle Data Form from closing will prevent the Main Form from closing.
+
+Inserting a New Vehicle
+When a new row is added to the DataGridView, you will need to programmatically set the value of the “SoldBy” column to zero.
+
+Validation is not required for data entry. When inserting rows into the table, fill out all columns and enter valid data.
+
+Programming Requirements
+
+Your program must use data binding to populate controls with Vehicle data. In some special cases, data binding may not make sense, and thus output will be generated another way.
+
+Your program must use the provided database (AMDatabase.mdb). Do not alter the design of the database in any way.
+
+Your program must
+
+All event subscriptions and handling must be coded by you in the form class (not the Designer file).
+
+Set the CommandBuilder’s ConflictOption property to OverwriteChanges before generating commands for the DataAdapter. This will prevent concurrency exceptions.
+
+Testing
+
+Ensure the application is fully tested before user acceptance testing (UAT). Developing a list of test cases prior to testing will help eliminate missing tests.
+
+What to Submit
+
+Your assignment will be submitted as a .zip file and will contain one or more Visual Studio solution directories. Name the .zip file using the following naming format:
+
+adev-2008_firstname_lastname_assignment_7.zip
+The “firstname” and “lastname” parts of the file name will be substituted with your first and last names.
+
+Each Visual Studio solution is saved to its own directory (referred to as the Solution Directory). Your submission must follow the directory structure as seen below.
+
+Directory Structure
+
+adev-2008_firstname_lastname_assignment_7.zip
+├── RRCAGLibraryFirstNameLastName
+└── RRCAGAppFirstNameLastName
+Due Date
+
+The due date for the assignment can be found in the Dropbox folder for this assignment.
+
+If you are unsure of the due date, ask the instructor to avoid not submitting your assignment by the due date.
+
+Evaluation
+
+A rubric is used to grade your assignment. Review the rubric before and after completing the assignment. You can find the rubric in the Dropbox for this assignment.
+
+Grading
+
+The weight of this assignment can be found in the Course Outline and the Grade tool in Learn.
+
+Assignment Improvement Option
+
+After the evaluation of an assignment, you have the opportunity within one week of the due date to fix any defects in your assignment for a grade improvement of up to 20%. For example, if you received a grade of 60% on an assignment, you could fix the problems, add missing functionality, etc. and improve your grade up to 80%.
+
+Caveats:
+
+The Assignment Improvement Option is not available to assignments not submitted by the due date.
+You must achieve a grade of at least 35% on your initial submission.
+You must include a detailed list of improvements for each source code file. Ensure you have the original version of the files, as you may be asked to show it for comparison.
+You will only get one attempt to improve your grade.
