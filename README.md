@@ -16,16 +16,45 @@ Welcome to the ADEV-2008 Assignments Repository. This repository contains a sele
 Below is the final grade received for each assignment along with suggestions for improvement:
 
 - **Assignment 1:** 16/16
+Overall Feedback
+Need top documentation block
+
+Accessories costs will not be properly calculated
+
+[IMPROVED]
+
 - **Assignment 2:** 16/16
+Overall Feedback
+Add testing for less than 0 AND 0
+
+[IMPROVED]
+
 - **Assignment 3:** 7.6/8
-  - *Improvement Suggestion:* Need to create actual Salesquotes and not rewrite the code.
-  - *Improvement Suggestion:* Need to use the Financing class for payments.
+Overall Feedback
+IMPROVED
+
+Needs a lot more tests, CarWashInvoice should have about 40 and SalesQuote about 50
+
 - **Assignment 4:** 16/16
+Overall Feedback
+IMPROVED
+
+In Invoice GoodsAndServicesTaxCharged, ProvincialSalesTaxCharged, and SubTotal should be abstract
+  
 - **Assignment 5:** 14/16
-  - *Improvement Suggestion:* Should use Packages from the resources.
-  - *Improvement Suggestion:* Create invoice doesn't work - **Note:** This issue has been resolved.
-  - *Improvement Suggestion:* Simplify the Package creation code to reduce duplicate code.
+Overall Feedback
+Need to created actual Salesquotes and not rewrite the code
+
+Need to use the Financing class for payments
+
 - **Assignment 6:** 13/16
+Overall Feedback
+Should use Packages from the resources
+
+Create invoice doesn't work
+
+Simplify the Package creation code to reduce duplicate code
+
 - **Assignment 7:** 16/16
 
 ## Repository Structure
