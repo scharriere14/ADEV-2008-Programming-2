@@ -1,0 +1,304 @@
+Requiremnts for assignment 1:
+
+Module 1 Assignment
+
+This assignment will test your knowledge of the following areas:
+
+Creating projects and solutions in Visual Studio
+Coding classes
+Coding enumerations
+Documenting your code
+Contents
+
+Resources
+Requirements
+Console Application Project
+SalesQuote Class
+Design
+Fields
+Constructors
+Methods
+Accessories Enumeration
+ExteriorFinish Enumeration
+Program
+Program Class
+Program Requirements
+Output Requirement
+What to Submit
+Due Date
+Evaluation
+Grading
+Resources
+
+To complete this phase of the project, you will need to download the assignment file(s) from here.
+
+Contents
+
+adev-2008_assignment_class_diagrams.pdf - The UML class diagrams for all the assignments in this course.
+Requirements
+
+The first phase of the project will require you to begin development on a library for all RRC Automotive Group applications. The library will include classes and other constructs.
+
+Console Application Project
+
+Create a new Console App (.NET Framework) Project. Name the project LastName.FirstName.RRCAG, where “FirstName” and “LastName” correspond to your first and last names.
+
+Name the Visual Studio Solution Assignment1FirstNameLastName, where “FirstName” and “LastName” correspond to your first and last names.
+
+Examples
+
+If your name is Dallas Page, the project and solution would be named:
+
+Project: Page.Dallas.RRCAG
+Solution: Assignment1DallasPage
+WARNING!
+Do not proceed with the rest of the assignment until you are sure you have set up the Visual Studio solution and project correctly.
+DO NOT modify, add or subtract any members to any classes or other constructs.
+SalesQuote Class
+
+Namespace: LastName.FirstName.Business
+
+This class contains functionality that supports the business process of determining a quote for the sale of a vehicle.
+
+Create the SalesQuote class in the console application project. This class must be defined under the LastName.FirstName.Business namespace, where First and Last correspond to your first and last names.
+
+Design
+SalesQuote
+- vehicleSalePrice : decimal
+- tradeInAmount : decimal
+- salesTaxRate : decimal
+- accessoriesChosen : Accessories
+- exteriorFinishChosen : ExteriorFinish
++ SalesQuote(vehicleSalePrice : decimal, tradeInAmount : decimal, salesTaxRate : decimal, accessoriesChosen : Accessories, exteriorFinishChosen : ExteriorFinish)
++ SalesQuote(vehicleSalePrice : decimal, tradeInAmount : decimal, salesTaxRate : decimal)
++ GetVehicleSalePrice() : decimal
++ SetVehicleSalesPrice(vehicleSalePrice : decimal) : void
++ GetTradeInAmount() : decimal
++ SetTradeInAmount(tradeInAmount : decimal) : void
++ GetAccessoriesChosen() : Accessories
++ SetAccessoriesChosen(accessoriesChosen : Accessories) : void
++ GetExteriorFinishChosen() : ExteriorFinish
++ SetExteriorFinishChosen(exteriorFinishChosen : ExteriorFinish) : void
++ GetAccessoriesCost() : decimal
++ GetExteriorFinishCost() : decimal
++ GetTotalOptions() : decimal
++ GetSubTotal() : decimal
++ GetSalesTax() : decimal
++ GetTotal() : decimal
++ GetAmountDue() : decimal
+Fields
+- vehicleSalePrice : decimal - The selling price of the vehicle being sold.
+
+- tradeInAmount : decimal - The amount offered to the customer for the trade in of their vehicle.
+
+- salesTaxRate : decimal - The tax rate applied to the sale of a vehicle.
+
+- accessoriesChosen : Accessories - The chosen accessories.
+
+- exteriorFinishChosen : ExteriorFinish - The chosen exterior finish.
+
+Constructors
++ SalesQuote(decimal, decimal, decimal, Accessories, ExteriorFinish)
+
+Initializes an instance of SalesQuote with a vehicle price, trade-in value, sales tax rate, accessories chosen and exterior finish chosen.
+
+Parameters:
+
+vehicleSalePrice - The selling price of the vehicle being sold.
+tradeInAmount - The amount offered to the customer for the trade in of their vehicle.
+salesTaxRate - The tax rate applied to the sale of a vehicle.
+accessoriesChosen - The value of the chosen accessories.
+exteriorFinishChosen - The value of the chosen exterior finish.
++ SalesQuote(decimal, decimal, decimal)
+
+Initializes an instance of SalesQuote with a vehicle price, trade-in amount, sales tax rate, no accessories chosen and no exterior finish chosen.
+
+Parameters:
+
+vehicleSalePrice - The selling price of the vehicle being sold.
+tradeInAmount - The amount offered to the customer for the trade in of their vehicle.
+salesTaxRate - The tax rate applied to the sale of a vehicle.
+Methods
++ GetVehicleSalePrice() : decimal - Gets the sale price of the vehicle.
+
++ SetVehicleSalePrice(decimal) : void - Sets the sale price of the vehicle.
+
+Parameters:
+
+vehicleSalePrice : decimal - the selling price of the vehicle.
++ GetTradeInAmount() : decimal - Gets the trade in amount.
+
++ SetTradeInAmount(decimal) : void - Sets the trade in amount.
+
+Parameters:
+
+tradeInAmount : decimal - The amount offered to the customer for the trade in of their vehicle.
++ GetAccessoriesChosen() : Accessories - Gets the accessories chosen for the vehicle.
+
++ SetAccessoriesChosen(Accessories) : void - Sets the accessories chosen for the vehicle.
+
+Parameters:
+
+accessoriesChosen : Accessories - The chosen accessories.
++ GetExteriorFinishChosen() : ExteriorFinish - Gets the exterior finish chosen for the vehicle.
+
++ SetExteriorFinishChosen(ExteriorFinish) : void - Sets the exterior finish chosen for the vehicle.
+
+Parameters:
+
+exteriorFinishChosen : ExteriorFinish - The chosen exterior finish.
++ GetAccessoriesCost() : decimal - Returns the cost of the accessories chosen.
+
+Accessories have the following costs:
+
+Stereo System - $505.05
+Leather Interior - $1,010.10
+Computer Navigation - $1,515.15
++ GetExteriorFinishCost() : decimal - Returns the cost of the exterior finish chosen.
+
+Exterior Finishes have the following costs:
+
+Standard - $202.02
+Pearlized - $404.04
+Custom - $606.06
++ GetTotalOptions() : decimal - Return the sum of the cost of accessories chosen and the cost of the exterior finish chosen (rounded to two decimal places).
+
++ GetSubTotal() : decimal - Returns the sum of the vehicle’s sale price, accessories and exterior finish costs (rounded to two decimal places).
+
++ GetSalesTax() : decimal - Returns the amount of tax to charge based on the subtotal (rounded to two decimal places).
+
++ GetTotal() : decimal - Returns the sum of the subtotal and taxes.
+
++ GetAmountDue() : decimal - Returns the difference of the total and trade-in amount (rounded to two decimal places).
+
+Accessories Enumeration
+
+Namespace: LastName.FirstName.Business
+
+<<enumeration>>
+Accessories
+StereoSystem = 0
+LeatherInterior = 1
+StereoAndLeather = 2
+ComputerNavigation = 3
+StereoAndNavigation = 4
+LeatherAndNavigation = 5
+All = 6
+None = 7
+The Accessories enumeration has the following values:
+
+StereoSystem - The stereo system accessory.
+LeatherInterior - The leather interior accessory.
+StereoAndLeather - The stereo system and leather interior accessories.
+ComputerNavigation - The computer navigation accessory.
+StereoAndNavigation - The stereo system and computer navigation accessories.
+LeatherAndNavigation = - The leather interior and computer navigation accessories.
+All = All the accessories.
+None = None of the accessories.
+ExteriorFinish Enumeration
+
+Namespace: LastName.FirstName.Business
+
+<<enumeration>>
+ExteriorFinish
+Standard = 0
+Pearlized = 1
+Custom = 2
+None = 3
+The Accessories enumeration has the following values:
+
+Standard - The standard exterior finish.
+Pearlized - The pearlized exterior finish.
+Custom - The custom exterior finish.
+None = None of the exterior finishes.
+Program
+
+Program Class
+The Program class is generated when you created the Console App (.NET Framework) project. Ensure the Program class is in the LastName.FirstName.RRCAG namespace.
+
+Program Requirements
+Your program will include implementation to test the following members of the SalesQuote class:
+
++ SalesQuote(decimal, decimal, decimal)
++ SetTradeInAmount(decimal) : void
++ GetExteriorFinishCost() : decimal
++ GetTotal() : decimal
+For each method (unit) being tested, ensure your client program provides output clearly describing the method being tested, along with the expected and actual result.
+
+Each unit test will be written in its own method. Not writing your unit tests in methods will not earn you credit on the assignment.
+Each unit test method will test one outcome only.
+Each unit test method will be named using the standard outlined in the course material.
+When testing constructors, verify the results by calling an accessor method of the class.
+When testing mutators, use the accessor method to verify the state change.
+When a test fails (actual does not match the expected), correct the method code, then re-test. Keep in mind that a poorly written test can produce inaccurate test results. If a test fails, ensure you have written the test correctly before modifying your unit code.
+Output Requirement
+For each method (unit) being tested, output the method signature.
+
+For each test, output the following:
+
+Test number
+Outcome description
+Expected result
+Actual result
+Leave one blank line between each test.
+
+Output Format
+
+Testing method GetVehicleSalesPrice()
+
+Test 1
+Expected: 5000.00
+Actual: 5000.00
+
+Test 2
+Expected: 6000.00
+Actual: 6000.00
+
+Testing method SetVehicleSalesPrice(decimal)
+
+Test 1
+Expected: 9000.00
+Actual: 9000.00
+DO NOT use keyboard input. Hard code all test values.
+
+If a method has more than one outcome, you will require a test for each outcome. Ensure you indicate the test number for each test.
+
+Avoid creating additional methods to reduce repetition in your test application. It is expected that some lines of code will be duplicated.
+
+What to Submit
+
+Your assignment will be submitted as a .zip file and will contain one or more Visual Studio solution directories. Name the .zip file using the following naming format:
+
+adev-2008_firstname_lastname_assignment_1.zip
+The “firstname” and “lastname” parts of the file name will be substituted with your first and last names.
+
+Each Visual Studio solution is saved to its own directory (referred to as the Solution Directory). Your submission must follow the directory structure as seen below.
+
+Directory Structure
+
+adev-2008_firstname_lastname_assignment_1.zip
+└── Assignment1FirstNameLastName
+Due Date
+
+The due date for the assignment can be found in the Dropbox folder for this assignment.
+
+If you are unsure of the due date, ask the instructor to avoid not submitting your assignment by the due date.
+
+Evaluation
+
+A rubric is used to grade your assignment. Review the rubric before and after completing the assignment. You can find the rubric in the Dropbox for this assignment.
+
+Grading
+
+The weight of this assignment can be found in the Course Outline and the Grade tool in Learn.
+
+Assignment Improvement Option
+
+After the evaluation of an assignment, you have the opportunity within one week of the due date to fix any defects in your assignment for a grade improvement of up to 20%. For example, if you received a grade of 60% on an assignment, you could fix the problems, add missing functionality, etc. and improve your grade up to 80%.
+
+Caveats:
+
+The Assignment Improvement Option is not available to assignments not submitted by the due date.
+You must achieve a grade of at least 35% on your initial submission.
+You must include a detailed list of improvements for each source code file. Ensure you have the original version of the files, as you may be asked to show it for comparison.
+You will only get one attempt to improve your grade.
