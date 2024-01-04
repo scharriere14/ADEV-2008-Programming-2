@@ -1,0 +1,146 @@
+Module 4 Assignment
+
+This assignment will reinforce your knowledge of the following areas:
+
+Coding classes with events
+Subscribing to and handling events
+Contents
+
+Defect Management
+Requirements
+SalesQuote Class
+Events
+Methods
+Invoice Class
+Events
+Methods
+CarWashInvoice Class
+Events
+Methods
+Other Considerations
+Program
+What to Submit
+Due Date
+Evaluation
+Grading
+Introduction
+
+This phase of the project will have you make some updates to classes in the library project.
+
+Defect Management
+
+Part of the evaluation of this assignment will include your ability to repair defects from previous versions of your code. Ensure that you are applying the feedback provided to you in the assignment evaluations. You should expect to receive deductions on this assignment for any outstanding defects.
+
+Requirements
+
+WARNING!
+It is highly recommended you make a copy of the your RRCAGLibraryFirstNameLastName solution prior to editing the LastName.FirstName.Business project.
+Update the following classes in the LastName.FirstName.Business namespace.
+
+SalesQuote Class
+
+Add the following events and methods to the SalesQuote class.
+
+Events
++ VehiclePriceChanged : EventHandler - Occurs when the price of the vehicle being quoted on changes.
+
++ TradeInAmountChanged : EventHandler - Occurs when the amount for the trade in vehicle changes.
+
++ AccessoriesChosenChanged : EventHandler - Occurs when the chosen accessories change.
+
++ ExteriorFinishChosenChanged : EventHandler - Occurs when the chosen exterior finish changes.
+
+Methods
+# OnVehiclePriceChanged() : void (virtual) - Raises the VehiclePriceChanged event.
+
+# OnTradeInAmountChanged() : void (virtual) - Raises the TradeInAmountChanged event.
+
+# OnAccessoriesChosenChanged() : void (virtual) - Raises the AccessoriesChosenChanged event.
+
+# OnExteriorFinishChosenChanged() : void (virtual) - Raises the ExteriorFinishChosenChanged event.
+
+Invoice Class
+
+Add the following events and methods to the Invoice class.
+
+Events
++ ProvincialSalesTaxRateChanged : EventHandler - Occurs when the provincial sales tax rate of the Invoice changes.
+
++ GoodsAndServicesTaxRateChanged : EventHandler - Occurs when the goods and services tax rate of the Invoice changes.
+
+Methods
+# OnProvincialSalesTaxRateChanged() : void (virtual) - Raises the ProvincialSalesTaxRateChanged event.
+
+# OnGoodsAndServicesTaxRateChanged() : void (virtual) - Raises the GoodsAndServicesTaxRateChanged event.
+
+CarWashInvoice Class
+
+Add the following events and methods to the CarWashInvoice class.
+
+Events
++ PackageCostChanged : EventHandler - Occurs when the package cost changes.
+
++ FragranceCostChanged : EventHandler - Occurs when the fragrance cost changes.
+
+Methods
+# OnPackageCostChanged() : void (virtual) - Raises the PackageCostChanged event.
+
+# OnFragranceCostChanged() : void (virtual) - Raises the FragranceCostChanged event.
+
+Other Considerations
+
+Events that are raised when a state of the object changes, should only be raised when the state has actually changed.
+Example: If the current state is 500, and its being changed using the value 500, the event would not be raised as the state would remain the same.
+Program
+
+Create a new Console App (.NET Framework) Project. Name the project LastName.FirstName.RRCAGTests, where “FirstName” and “LastName” correspond to your first and last names.
+
+Name the Visual Studio Solution Assignment4FirstNameLastName, where “FirstName” and “LastName” correspond to your first and last names.
+
+If your name is Dallas Page, the project and solution would be named:
+
+Project: Page.Dallas.RRCAGTests
+Solution: Assignment4DallasPage*
+Construct instances of each type modified in this assignment.
+Subscribe to at least one event per object.
+Demonstrate that the event is raised when it is expected to.
+User input is not required.
+
+What to Submit
+
+Your assignment will be submitted as a .zip file and will contain one or more Visual Studio solution directories. Name the .zip file using the following naming format:
+
+adev-2008_firstname_lastname_assignment_4.zip
+The “firstname” and “lastname” parts of the file name will be substituted with your first and last names.
+
+Each Visual Studio solution is saved to its own directory (referred to as the Solution Directory). Your submission must follow the directory structure as seen below.
+
+Directory Structure
+
+adev-2008_firstname_lastname_assignment_4.zip
+├── RRCAGLibraryFirstNameLastName
+└── Assignment4FirstNameLastName
+Due Date
+
+The due date for the assignment can be found in the Dropbox folder for this assignment.
+
+If you are unsure of the due date, ask the instructor to avoid not submitting your assignment by the due date.
+
+Evaluation
+
+A rubric is used to grade your assignment. Review the rubric before and after completing the assignment. You can find the rubric in the Dropbox for this assignment.
+
+Grading
+
+The weight of this assignment can be found in the Course Outline and the Grade tool in Learn.
+
+Assignment Improvement Option
+
+After the evaluation of an assignment, you have the opportunity within one week of the due date to fix any defects in your assignment for a grade improvement of up to 20%. For example, if you received a grade of 60% on an assignment, you could fix the problems, add missing functionality, etc. and improve your grade up to 80%.
+
+Caveats:
+
+The Assignment Improvement Option is not available to assignments not submitted by the due date.
+You must achieve a grade of at least 35% on your initial submission.
+You must include a detailed list of improvements for each source code file. Ensure you have the original version of the files, as you may be asked to show it for comparison.
+You will only get one attempt to improve your grade.
