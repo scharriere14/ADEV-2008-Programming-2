@@ -12,29 +12,6 @@ Welcome to the ADEV-2008 Assignments Repository. This repository contains a sele
 - **Responsibility Disclaimer**: I do not take responsibility if copying my code leads to academic issues, including receiving a grade of 0 or other sanctions. It is your responsibility to use these resources ethically and within the guidelines of your academic institution.
 - While efforts are made to keep the repository up-to-date, the owner does not guarantee the accuracy or completeness of the code.
 
-## Final Grades and Improvement Suggestions
-Below are the final grades received for each assignment, along with suggestions for improvement:
-
-- **Assignment 1**: 16/16
-  - *Feedback*: Needs a top documentation block. Accessories costs were not properly calculated. [IMPROVED]
-
-- **Assignment 2**: 16/16
-  - *Feedback*: Add testing for less than 0 and for 0. [IMPROVED]
-
-- **Assignment 3**: 7.6/8
-  - *Feedback*: Needs more tests. CarWashInvoice should have about 40, and SalesQuote about 50. [IMPROVED]
-
-- **Assignment 4**: 16/16
-  - *Feedback*: GoodsAndServicesTaxCharged, ProvincialSalesTaxCharged, and SubTotal should be abstract. [IMPROVED]
-
-- **Assignment 5**: 14/16
-  - *Feedback*: Need to create actual SalesQuotes instead of rewriting the code. The Financing class should be used for payments.
-
-- **Assignment 6**: 13/16
-  - *Feedback*: Packages from resources should be used. The "Create Invoice" functionality does not work. Simplify package creation code to reduce duplication.
-
-- **Assignment 7**: 16/16
-
 ## Repository Structure
 Each directory within this repository corresponds to a specific assignment from the ADEV-2008 course. Inside, you'll find the code files along with a brief description of the assignment, the final grade, and any suggestions for improvement.
 
