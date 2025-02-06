@@ -1,0 +1,14 @@
+C:\Users\steph\source\repos\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\obj\Debug\Charriere.Stephanie.RRCAG.csproj.AssemblyReference.cache
+C:\Users\steph\source\repos\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\obj\Debug\Charriere.Stephanie.RRCAG.csproj.CoreCompileInputs.cache
+C:\Users\steph\source\repos\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\bin\Debug\Charriere.Stephanie.RRCAG.exe.config
+C:\Users\steph\source\repos\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\bin\Debug\Charriere.Stephanie.RRCAG.exe
+C:\Users\steph\source\repos\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\bin\Debug\Charriere.Stephanie.RRCAG.pdb
+C:\Users\steph\source\repos\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\obj\Debug\Charriere.Stephanie.RRCAG.exe
+C:\Users\steph\source\repos\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\obj\Debug\Charriere.Stephanie.RRCAG.pdb
+C:\Users\steph\source\repos\scharriere14\ADEV-2008-Programming-2\Module 1\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\bin\Debug\Charriere.Stephanie.RRCAG.exe.config
+C:\Users\steph\source\repos\scharriere14\ADEV-2008-Programming-2\Module 1\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\bin\Debug\Charriere.Stephanie.RRCAG.exe
+C:\Users\steph\source\repos\scharriere14\ADEV-2008-Programming-2\Module 1\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\bin\Debug\Charriere.Stephanie.RRCAG.pdb
+C:\Users\steph\source\repos\scharriere14\ADEV-2008-Programming-2\Module 1\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\obj\Debug\Charriere.Stephanie.RRCAG.csproj.AssemblyReference.cache
+C:\Users\steph\source\repos\scharriere14\ADEV-2008-Programming-2\Module 1\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\obj\Debug\Charriere.Stephanie.RRCAG.csproj.CoreCompileInputs.cache
+C:\Users\steph\source\repos\scharriere14\ADEV-2008-Programming-2\Module 1\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\obj\Debug\Charriere.Stephanie.RRCAG.exe
+C:\Users\steph\source\repos\scharriere14\ADEV-2008-Programming-2\Module 1\Assignment1StephanieCharriere\Charriere.Stephanie.RRCAG\obj\Debug\Charriere.Stephanie.RRCAG.pdb
