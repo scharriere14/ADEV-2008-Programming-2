@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography;
 
 namespace Charriere.Stephanie.Business
 {
@@ -9,10 +8,7 @@ namespace Charriere.Stephanie.Business
     /// </summary>
     class CarWashInvoice : Invoice
     {
-        // The amount charged for the chosen package.
         private decimal packageCost;
-
-        // The amount charged for the chosen fragrance.
         private decimal fragranceCost;
 
         /// <summary>
@@ -27,12 +23,9 @@ namespace Charriere.Stephanie.Business
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("The value cannot be less than 0.");
+                    throw new ArgumentOutOfRangeException("value", "The value cannot be less than 0.");
                 }
-                else
-                {
-                    this.packageCost = value;
-                }
+                packageCost = value;
             }
         }
 
@@ -48,12 +41,9 @@ namespace Charriere.Stephanie.Business
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("The value cannot be less than 0.");
+                    throw new ArgumentOutOfRangeException("value", "The value cannot be less than 0.");
                 }
-                else
-                {
-                    this.fragranceCost = value;
-                }
+                fragranceCost = value;
             }
         }
 
@@ -85,32 +75,32 @@ namespace Charriere.Stephanie.Business
         //ArgumentOutOfRangeException - Thrown when the goods and services tax rate is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “goodsAndServicesTaxRate”.
         //ArgumentOutOfRangeException - Thrown when the goods and services tax rate is greater than 1. Message: “The argument cannot be greater than 1.” Parameter name: “goodsAndServicesTaxRate”.
         public CarWashInvoice(decimal provincialSalesTaxRate, decimal goodsAndServicesTaxRate)
+            : base(provincialSalesTaxRate, goodsAndServicesTaxRate)
         {
             PackageCost = 0;
             FragranceCost = 0;
 
             if (provincialSalesTaxRate < 0)
             {
-                throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
+                throw new ArgumentOutOfRangeException("provincialSalesTaxRate", "The argument cannot be less than 0.");
             }
             if (provincialSalesTaxRate > 1)
             {
-                throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
+                throw new ArgumentOutOfRangeException("provincialSalesTaxRate", "The argument cannot be greater than 1.");
             }
 
             this.ProvincialSalesTaxRate = provincialSalesTaxRate;
 
             if (goodsAndServicesTaxRate < 0)
             {
-                throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
+                throw new ArgumentOutOfRangeException("goodsAndServicesTaxRate", "The argument cannot be less than 0.");
             }
             if (goodsAndServicesTaxRate > 1)
             {
-                throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
+                throw new ArgumentOutOfRangeException("goodsAndServicesTaxRate", "The argument cannot be greater than 1.");
             }
 
             this.GoodsAndServicesTaxRate = goodsAndServicesTaxRate;
-       
         }
 
         /// <summary>
@@ -145,36 +135,36 @@ namespace Charriere.Stephanie.Business
         {
             if (provincialSalesTaxRate < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(provincialSalesTaxRate), "The argument cannot be less than 0.");
+                throw new ArgumentOutOfRangeException("provincialSalesTaxRate", "The argument cannot be less than 0.");
             }
 
             if (provincialSalesTaxRate > 1)
             {
-                throw new ArgumentOutOfRangeException(nameof(provincialSalesTaxRate), "The argument cannot be greater than 1.");
+                throw new ArgumentOutOfRangeException("provincialSalesTaxRate", "The argument cannot be greater than 1.");
             }
 
             this.ProvincialSalesTaxRate = provincialSalesTaxRate;
 
             if (goodsAndServicesTaxRate < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(goodsAndServicesTaxRate), "The argument cannot be less than 0.");
+                throw new ArgumentOutOfRangeException("goodsAndServicesTaxRate", "The argument cannot be less than 0.");
             }
 
             if (goodsAndServicesTaxRate > 1)
             {
-                throw new ArgumentOutOfRangeException(nameof(goodsAndServicesTaxRate), "The argument cannot be greater than 1.");
+                throw new ArgumentOutOfRangeException("goodsAndServicesTaxRate", "The argument cannot be greater than 1.");
             }
 
             this.GoodsAndServicesTaxRate = goodsAndServicesTaxRate;
 
             if (packageCost < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(packageCost), "The argument cannot be less than 0.");
+                throw new ArgumentOutOfRangeException("packageCost", "The argument cannot be less than 0.");
             }
             this.PackageCost = packageCost;
             if (fragranceCost < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(fragranceCost), "The argument cannot be less than 0.");
+                throw new ArgumentOutOfRangeException("fragranceCost", "The argument cannot be less than 0.");
             }
             this.FragranceCost = fragranceCost;
         }

@@ -35,7 +35,7 @@ namespace Charriere.Stephanie.Business
                 }
                 else
                 {
-                    this.goodsAndServicesTaxRate = goodsAndServicesTaxRate;
+                    this.goodsAndServicesTaxRate = value;
                 }
             
             }
@@ -62,7 +62,7 @@ namespace Charriere.Stephanie.Business
                 }
                 else
                 {
-                    this.goodsAndServicesTaxRate = goodsAndServicesTaxRate;
+                    this.goodsAndServicesTaxRate = value;
                 }
 
             }
@@ -112,23 +112,19 @@ namespace Charriere.Stephanie.Business
             {
                 throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
             }
-            else if (provincialSalesTaxRate > 1)
+            if (provincialSalesTaxRate > 1)
             {
                 throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
             }
-            else if (goodsAndServicesTaxRate < 0)
+            if (goodsAndServicesTaxRate < 0)
             {
                 throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
             }
-            else if (goodsAndServicesTaxRate > 1)
+             if (goodsAndServicesTaxRate > 1)
             {
                 throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
             }
-            else
-            {
-                this.provincialSalesTaxRate = provincialSalesTaxRate;
-                this.goodsAndServicesTaxRate = goodsAndServicesTaxRate;
-            }
+            
             this.provincialSalesTaxRate = provincialSalesTaxRate;
             this.goodsAndServicesTaxRate = goodsAndServicesTaxRate;
         }

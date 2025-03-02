@@ -20,42 +20,29 @@ namespace Charriere.Stephanie.Business
             //ArgumentOutOfRangeException - Thrown when the rate is less than 0.Message: “The argument cannot be less than 0.” Parameter name: “rate”.
             if (rate < 0)
             {
-                throw new ArgumentOutOfRangeException(
-                    "The argument cannot be less than 0.",
-                    "rate"
-                );
+                throw new ArgumentOutOfRangeException("rate", "The argument cannot be less than 0.");
             }
-            //ArgumentOutOfRangeException - Thrown when the rate is greater than 1.Message: “The argument cannot be greater than 1.” Parameter name: “rate”.
             if (rate > 1)
             {
-                throw new ArgumentOutOfRangeException(
-                    "The argument cannot be greater than 1.",
-                    "rate"
-                );
+                throw new ArgumentOutOfRangeException("rate", "The argument cannot be greater than 1.");
             }
-            //ArgumentOutOfRangeException - Thrown when the number of payments is less than or equal to zero.Message: “The argument cannot be less than or equal to 0.” Parameter name: “numberOfPaymentPeriods”.
             if (numberOfPaymentPeriods <= 0)
             {
-                throw new ArgumentOutOfRangeException(
-                    "The argument cannot be less than or equal to 0.",
-                    "numberOfPaymentPeriods"
-                );
+                throw new ArgumentOutOfRangeException("numberOfPaymentPeriods", "The argument cannot be less than or equal to 0.");
             }
-            //ArgumentOutOfRangeException - Thrown when the present value is less than or equal to zero.Message: “The argument cannot be less than or equal to 0.” Parameter name: “presentValue”.
-            if (rate <= 0)
+            if (presentValue <= 0)
             {
-                throw new ArgumentOutOfRangeException(
-                    "The argument cannot be less than or equal to 0.",
-                    "presentValue"
-                );
+                throw new ArgumentOutOfRangeException("presentValue", "The argument cannot be less than or equal to 0.");
             }
 
-            //The implementation for the GetPayment() method is:
             decimal futureValue = 0;
             decimal type = 0;
             decimal payment = 0;
+
             if (rate == 0)
+            {
                 payment = presentValue / numberOfPaymentPeriods;
+            }
             else
                 payment =
                     rate

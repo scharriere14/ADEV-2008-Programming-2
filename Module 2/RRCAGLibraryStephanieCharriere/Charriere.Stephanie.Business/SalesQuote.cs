@@ -82,7 +82,7 @@ namespace Charriere.Stephanie.Business
             {
                 if (Enum.IsDefined(typeof(ExteriorFinish), value))
                 {
-                    this.exteriorFinishChosen = exteriorFinishChosen;
+                    this.exteriorFinishChosen = value;
                 }
                 throw new System.ComponentModel.InvalidEnumArgumentException(
                     "The value is an invalid enumeration value"
