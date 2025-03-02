@@ -1,0 +1,7 @@
+C:\Users\steph\source\repos\ADEV2-Assignments\ADEV-2008-Programming-2\Module 2\RRCAGLibraryStephanieCharriere\Charriere.Stephanie.Business\obj\Debug\Charriere.Stephanie.Business.csproj.AssemblyReference.cache
+C:\Users\steph\source\repos\ADEV2-Assignments\ADEV-2008-Programming-2\Module 2\RRCAGLibraryStephanieCharriere\Charriere.Stephanie.Business\obj\Debug\Charriere.Stephanie.Business.csproj.CoreCompileInputs.cache
+C:\Users\steph\source\repos\ADEV2-Assignments\ADEV-2008-Programming-2\Module 2\RRCAGLibraryStephanieCharriere\Charriere.Stephanie.Business\bin\Debug\Charriere.Stephanie.Business.exe.config
+C:\Users\steph\source\repos\ADEV2-Assignments\ADEV-2008-Programming-2\Module 2\RRCAGLibraryStephanieCharriere\Charriere.Stephanie.Business\bin\Debug\Charriere.Stephanie.Business.exe
+C:\Users\steph\source\repos\ADEV2-Assignments\ADEV-2008-Programming-2\Module 2\RRCAGLibraryStephanieCharriere\Charriere.Stephanie.Business\bin\Debug\Charriere.Stephanie.Business.pdb
+C:\Users\steph\source\repos\ADEV2-Assignments\ADEV-2008-Programming-2\Module 2\RRCAGLibraryStephanieCharriere\Charriere.Stephanie.Business\obj\Debug\Charriere.Stephanie.Business.exe
+C:\Users\steph\source\repos\ADEV2-Assignments\ADEV-2008-Programming-2\Module 2\RRCAGLibraryStephanieCharriere\Charriere.Stephanie.Business\obj\Debug\Charriere.Stephanie.Business.pdb

@@ -159,11 +159,16 @@ Invoice
 + <<Property>> <<Read-only>> GoodsAndServicesTaxCharged : decimal
 + <<Property>> <<Read-only>> SubTotal : decimal
 + <<Property>> <<Read-only>> Total : decimal
+
 + Invoice(provincialSalesTaxRate : decimal, goodsAndServicesTaxRate : decimal)
+
+
+
 Fields
 - provincialSalesTaxRate : decimal - The provincial sales tax rate applied to the invoice.
 
 - goodsAndServicesTaxRate : decimal - The goods and services tax rate applied to the invoice.
+
 
 Properties
 + ProvincialSalesTaxRate : decimal - Gets and sets the provincial sales tax rate.
@@ -214,8 +219,10 @@ CarWashInvoice
 + <<Property>> <<Read-only>> ProvincialSalesTaxCharged : decimal
 + <<Property>> <<Read-only>> GoodsAndServicesTaxCharged : decimal
 + <<Property>> <<Read-only>> SubTotal : decimal
+
 + CarWashInvoice(provincialSalesTaxRate : decimal, goodsAndServicesTaxRate : decimal)
 + CarWashInvoice(provincialSalesTaxRate : decimal, goodsAndServicesTaxRate : decimal, packageCost : decimal, fragranceCost : decimal)
+
 Fields
 - packageCost : decimal - The amount charged for the chosen package.
 
@@ -242,6 +249,7 @@ Methods
 Parameters:
 
 provincialSalesTaxRate - The rate of provincial tax charged to a customer.
+
 goodsAndServicesTaxRate - The rate of goods and services tax charged to a customer.
 Exceptions:
 ArgumentOutOfRangeException - Thrown when the provincial sales tax rate is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “provincialSalesTaxRate”.
@@ -263,6 +271,8 @@ ArgumentOutOfRangeException - Thrown when the goods and services tax rate is les
 ArgumentOutOfRangeException - Thrown when the goods and services tax rate is greater than 1. Message: “The argument cannot be greater than 1.” Parameter name: “goodsAndServicesTaxRate”.
 ArgumentOutOfRangeException - Thrown when the package cost is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “packageCost”.
 ArgumentOutOfRangeException - Thrown when the fragrance cost is less than 0. Message: “The argument cannot be less than 0.” Parameter name: “fragranceCost”.
+
+
 Financial Class
 
 Namespace: Last.First.Business
@@ -301,6 +311,8 @@ else
     payment = rate * (futureValue + presentValue * (decimal)Math.Pow((double)(1 + rate), (double)numberOfPaymentPeriods)) / (((decimal)Math.Pow((double)(1 + rate), (double)numberOfPaymentPeriods) - 1) * (1 + rate * type));
 
 return Math.Round(payment, 2);
+
+
 Program
 
 Create a new Console App (.NET Framework) Project. Name the project LastName.FirstName.RRCAGTests, where “FirstName” and “LastName” correspond to your first and last names.

@@ -1,9 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\steph\\source\\repos\\scharriere14\\ADEV-2008-Programming-2\\Module 1\\Assignment1StephanieCharriere\\",
+  "WorkspaceRootPath": "C:\\Users\\steph\\source\\repos\\ADEV2-Assignments\\ADEV-2008-Programming-2\\Module 1\\Assignment1StephanieCharriere\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6E7A6D7E-46CF-4AF9-BEB5-CE1393083D4C}|Charriere.Stephanie.RRCAG\\Charriere.Stephanie.RRCAG.csproj|C:\\Users\\steph\\source\\repos\\scharriere14\\ADEV-2008-Programming-2\\Module 1\\Assignment1StephanieCharriere\\charriere.stephanie.rrcag\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6E7A6D7E-46CF-4AF9-BEB5-CE1393083D4C}|Charriere.Stephanie.RRCAG\\Charriere.Stephanie.RRCAG.csproj|c:\\users\\steph\\source\\repos\\adev2-assignments\\adev-2008-programming-2\\module 1\\assignment1stephaniecharriere\\charriere.stephanie.rrcag\\salesquote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E7A6D7E-46CF-4AF9-BEB5-CE1393083D4C}|Charriere.Stephanie.RRCAG\\Charriere.Stephanie.RRCAG.csproj|solutionrelative:charriere.stephanie.rrcag\\salesquote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E7A6D7E-46CF-4AF9-BEB5-CE1393083D4C}|Charriere.Stephanie.RRCAG\\Charriere.Stephanie.RRCAG.csproj|C:\\Users\\steph\\source\\repos\\ADEV2-Assignments\\ADEV-2008-Programming-2\\Module 1\\Assignment1StephanieCharriere\\charriere.stephanie.rrcag\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E7A6D7E-46CF-4AF9-BEB5-CE1393083D4C}|Charriere.Stephanie.RRCAG\\Charriere.Stephanie.RRCAG.csproj|solutionrelative:charriere.stephanie.rrcag\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,15 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "SalesQuote.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\source\\repos\\ADEV2-Assignments\\ADEV-2008-Programming-2\\Module 1\\Assignment1StephanieCharriere\\Charriere.Stephanie.RRCAG\\SalesQuote.cs",
+              "RelativeDocumentMoniker": "Charriere.Stephanie.RRCAG\\SalesQuote.cs",
+              "ToolTip": "C:\\Users\\steph\\source\\repos\\ADEV2-Assignments\\ADEV-2008-Programming-2\\Module 1\\Assignment1StephanieCharriere\\Charriere.Stephanie.RRCAG\\SalesQuote.cs",
+              "RelativeToolTip": "Charriere.Stephanie.RRCAG\\SalesQuote.cs",
+              "ViewState": "AgIAANcAAAAAAAAAAAAmwM0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T21:00:26.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\source\\repos\\scharriere14\\ADEV-2008-Programming-2\\Module 1\\Assignment1StephanieCharriere\\Charriere.Stephanie.RRCAG\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\source\\repos\\ADEV2-Assignments\\ADEV-2008-Programming-2\\Module 1\\Assignment1StephanieCharriere\\Charriere.Stephanie.RRCAG\\Program.cs",
               "RelativeDocumentMoniker": "Charriere.Stephanie.RRCAG\\Program.cs",
-              "ToolTip": "C:\\Users\\steph\\source\\repos\\scharriere14\\ADEV-2008-Programming-2\\Module 1\\Assignment1StephanieCharriere\\Charriere.Stephanie.RRCAG\\Program.cs*",
-              "RelativeToolTip": "Charriere.Stephanie.RRCAG\\Program.cs*",
+              "ToolTip": "C:\\Users\\steph\\source\\repos\\ADEV2-Assignments\\ADEV-2008-Programming-2\\Module 1\\Assignment1StephanieCharriere\\Charriere.Stephanie.RRCAG\\Program.cs",
+              "RelativeToolTip": "Charriere.Stephanie.RRCAG\\Program.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAowCoAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T19:23:55.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-04T19:23:55.057Z"
             }
           ]
         }
