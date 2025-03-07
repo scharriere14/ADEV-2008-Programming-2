@@ -14,10 +14,9 @@ namespace Charriere.Stephanie.Business
         /// <param name="numberOfPaymentPeriods">            numberOfPaymentPeriods - the total number of payment periods in the annuity.For example, if you make monthly payments on a four - year car loan, your loan has a total of 4 × 12(or 48) payment periods.</param>
         /// <param name="presentValue">            presentValue - the present value(or lump sum) that a series of payments to be paid in the future is worth now. For example, when a customer finances a car, the loan amount is the present value to the lender of the car payments the customer will make.</param>
         /// <returns></returns>
-        public decimal GetPayment(decimal rate, int numberOfPaymentPeriods, decimal presentValue)
+        public static decimal GetPayment(decimal rate, int numberOfPaymentPeriods, decimal presentValue)
         {
             //Exceptions:
-            //ArgumentOutOfRangeException - Thrown when the rate is less than 0.Message: “The argument cannot be less than 0.” Parameter name: “rate”.
             if (rate < 0)
             {
                 throw new ArgumentOutOfRangeException("rate", "The argument cannot be less than 0.");
@@ -40,22 +39,12 @@ namespace Charriere.Stephanie.Business
             decimal payment = 0;
 
             if (rate == 0)
-            {
                 payment = presentValue / numberOfPaymentPeriods;
-            }
             else
-                payment =
-                    rate
-                    * (
-                        futureValue
-                        + presentValue
-                            * (decimal)Math.Pow((double)(1 + rate), (double)numberOfPaymentPeriods)
-                    )
-                    / (
-                        ((decimal)Math.Pow((double)(1 + rate), (double)numberOfPaymentPeriods) - 1)
-                        * (1 + rate * type)
-                    );
+                payment = rate * (futureValue + presentValue * (decimal)Math.Pow((double)(1 + rate), (double)numberOfPaymentPeriods)) / (((decimal)Math.Pow((double)(1 + rate), (double)numberOfPaymentPeriods) - 1) * (1 + rate * type));
+
             return Math.Round(payment, 2);
         }
+  
     }
 }
