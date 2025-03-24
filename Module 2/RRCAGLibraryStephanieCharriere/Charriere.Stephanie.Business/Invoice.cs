@@ -35,7 +35,7 @@ namespace Charriere.Stephanie.Business
                 }
                 else
                 {
-                    this.goodsAndServicesTaxRate = value;
+                    this.provincialSalesTaxRate = value;
                 }
             
             }
@@ -108,22 +108,22 @@ namespace Charriere.Stephanie.Business
         /// <param name="goodsAndServicesTaxRate">The rate of goods and services tax charged to a customer.</param>
         public Invoice(decimal provincialSalesTaxRate, decimal goodsAndServicesTaxRate)
         {
-            if (provincialSalesTaxRate < 0)
-            {
-                throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
-            }
-            if (provincialSalesTaxRate > 1)
-            {
-                throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
-            }
-            if (goodsAndServicesTaxRate < 0)
-            {
-                throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
-            }
-             if (goodsAndServicesTaxRate > 1)
-            {
-                throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
-            }
+            //if (provincialSalesTaxRate < 0)
+            //{
+            //    throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
+            //}
+            //if (provincialSalesTaxRate > 1)
+            //{
+            //    throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
+            //}
+            //if (goodsAndServicesTaxRate < 0)
+            //{
+            //    throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
+            //}
+            // if (goodsAndServicesTaxRate > 1)
+            //{
+            //    throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
+            //}
             
             this.provincialSalesTaxRate = provincialSalesTaxRate;
             this.goodsAndServicesTaxRate = goodsAndServicesTaxRate;

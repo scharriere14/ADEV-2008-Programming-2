@@ -1,7 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Diagnostics.Eventing.Reader;
-using System.Xml.Linq;
 
 namespace Charriere.Stephanie.Business
 {
@@ -22,7 +20,6 @@ namespace Charriere.Stephanie.Business
         /// <exception cref=" ArgumentOutOfRangeException">Thrown when the property is set to less than or equal to 0.</exception>
         public decimal VehicleSalePrice
         {
-
             get { return this.vehicleSalePrice; }
             set
             {
@@ -63,9 +60,11 @@ namespace Charriere.Stephanie.Business
             get { return this.accessoriesChosen; }
             set
             {
-                if (value < 0)
+                if (!Enum.IsDefined(typeof(Accessories), value))
                 {
-                    throw new ArgumentOutOfRangeException("The value cannot be less than 0.");
+                    throw new InvalidEnumArgumentException(
+                        "The value is an invalid enumeration value"
+                    );
                 }
                 this.accessoriesChosen = value;
             }
@@ -84,9 +83,12 @@ namespace Charriere.Stephanie.Business
                 {
                     this.exteriorFinishChosen = value;
                 }
-                throw new System.ComponentModel.InvalidEnumArgumentException(
-                    "The value is an invalid enumeration value"
-                );
+                else
+                {
+                    throw new System.ComponentModel.InvalidEnumArgumentException(
+                        "The value is an invalid enumeration value"
+                    );
+                }
             }
         }
 
@@ -97,38 +99,42 @@ namespace Charriere.Stephanie.Business
         {
             get
             {
+                decimal stereoSystem = 505.05M;
+                decimal leatherInterior = 1010.10M;
+                decimal computerNavigation = 2020.20M;
+                decimal none = 0;
 
                 if (this.accessoriesChosen == Accessories.StereoSystem)
                 {
-                    return 505.05m;
+                    return stereoSystem;
                 }
                 else if (accessoriesChosen == Accessories.LeatherInterior)
                 {
-                    return 1010.10m;
+                    return leatherInterior;
                 }
                 else if (accessoriesChosen == Accessories.StereoAndLeather)
                 {
-                    return 1515.15m;
+                    return stereoSystem + leatherInterior;
                 }
                 else if (accessoriesChosen == Accessories.ComputerNavigation)
                 {
-                    return 2020.20m;
+                    return computerNavigation;
                 }
                 else if (accessoriesChosen == Accessories.StereoAndNavigation)
                 {
-                    return 2525.25m;
+                    return stereoSystem + computerNavigation;
                 }
                 else if (accessoriesChosen == Accessories.LeatherAndNavigation)
                 {
-                    return 3030.30m;
+                    return leatherInterior + computerNavigation;
                 }
                 else if (accessoriesChosen == Accessories.All)
                 {
-                    return 4545.45m;
+                    return stereoSystem + leatherInterior + computerNavigation;
                 }
-                else // if (accessoriesChosen == Accessories.None)
+                else //if (accessoriesChosen == Accessories.None)
                 {
-                    return 0;
+                    return none;
                 }
             }
         }
@@ -140,6 +146,7 @@ namespace Charriere.Stephanie.Business
                 decimal standard = 202.02M;
                 decimal pearlized = 404.04M;
                 decimal custom = 606.06M;
+                decimal none = 0;
 
                 if (exteriorFinishChosen == ExteriorFinish.Standard)
                 {
@@ -153,9 +160,9 @@ namespace Charriere.Stephanie.Business
                 {
                     return custom;
                 }
-                else
+                else //if (exteriorFinishChosen == ExteriorFinish.None)
                 {
-                    return 0;
+                    return none;
                 }
             }
         }
@@ -180,13 +187,13 @@ namespace Charriere.Stephanie.Business
         public decimal SalesTax
         {
             get
-            {
-                if (this.salesTaxRate <= 0)
-                {
-                    throw new ArgumentOutOfRangeException(
-                        "The value cannot be less than or equal to 0."
-                    );
-                }
+            { // pretty sure this was added in error
+                //if (this.salesTaxRate <= 0)
+                //{
+                //    throw new ArgumentOutOfRangeException(
+                //        "The value cannot be less than or equal to 0."
+                //    );
+                //}
                 return SubTotal * salesTaxRate;
             }
         }
@@ -222,90 +229,86 @@ namespace Charriere.Stephanie.Business
             ExteriorFinish exteriorFinishChosen
         )
         {
-            if (vehicleSalePrice <= 0)
-            {
-                throw new ArgumentOutOfRangeException(
-                    "The argument cannot be less than or equal to 0."
-                );
-                
-            }
+            //if (vehicleSalePrice <= 0)
+            //{
+            //    throw new ArgumentOutOfRangeException(
+            //        "The argument cannot be less than or equal to 0."
+            //    );
+            //}
             this.vehicleSalePrice = vehicleSalePrice;
 
-            if (tradeInAmount < 0)
-            {
-                throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
-            }
+            //if (tradeInAmount < 0)
+            //{
+            //    throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
+            //}
             this.tradeInAmount = tradeInAmount;
 
-            if (salesTaxRate < 0)
-            {
-                throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
-            }
+            //if (salesTaxRate < 0)
+            //{
+            //    throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
+            //}
 
-            if (salesTaxRate > 1)
-            {
-                throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
-            }
+            //if (salesTaxRate > 1)
+            //{
+            //    throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
+            //}
             this.salesTaxRate = salesTaxRate;
 
-                
-            if (!Enum.IsDefined(typeof(Accessories), accessoriesChosen))
-            {
-                throw new System.ComponentModel.InvalidEnumArgumentException(
-                    "The argument is an invalid enumeration value"
-                );
-            }
+            //if (!Enum.IsDefined(typeof(Accessories), accessoriesChosen))
+            //{
+            //    throw new System.ComponentModel.InvalidEnumArgumentException(
+            //        "The argument is an invalid enumeration value"
+            //    );
+            //}
 
             this.accessoriesChosen = accessoriesChosen;
 
-            if ( 
-
-                !Enum.IsDefined(typeof(ExteriorFinish), exteriorFinishChosen))
-            {
-                throw new System.ComponentModel.InvalidEnumArgumentException(
-                    "The argument is an invalid enumeration value"
-                );
-            }
+            //if (!Enum.IsDefined(typeof(ExteriorFinish), exteriorFinishChosen))
+            //{
+            //    throw new System.ComponentModel.InvalidEnumArgumentException(
+            //        "The argument is an invalid enumeration value"
+            //    );
+            //}
             this.exteriorFinishChosen = exteriorFinishChosen;
         }
 
-        //        ArgumentOutOfRangeException - Thrown when the vehicle sale price is less than or equal to 0.Message: “The argument cannot be less than or equal to 0.” Parameter name: “vehicleSalePrice”.
-        //ArgumentOutOfRangeException - Thrown when the trade in amount is less than 0.Message: “The argument cannot be less than 0.” Parameter name: “tradeInAmount”.
-        //ArgumentOutOfRangeException - Thrown when the sales tax rate is less than 0.Message: “The argument cannot be less than 0.” Parameter name: “salesTaxRate”.
-        //ArgumentOutOfRangeException - Thrown when the sales tax rate is greater than 1.Message: “The argument cannot be greater than 1.” Parameter name: “salesTaxRate”.
-
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="vehicleSalePrice"></param>
+        /// <param name="tradeInAmount"></param>
+        /// <param name="salesTaxRate"></param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public SalesQuote(decimal vehicleSalePrice, decimal tradeInAmount, decimal salesTaxRate)
         {
             exteriorFinishChosen = ExteriorFinish.None;
             accessoriesChosen = Accessories.None;
 
-            if (vehicleSalePrice <= 0)
-            {
-                throw new ArgumentOutOfRangeException(
-                    "The argument cannot be less than or equal to 0."
-                );
-            }
-            this.vehicleSalePrice = vehicleSalePrice;
+            //    if (vehicleSalePrice <= 0)
+            //    {
+            //        throw new ArgumentOutOfRangeException(
+            //            "The argument cannot be less than or equal to 0."
+            //        );
+            //    }
+                this.vehicleSalePrice = vehicleSalePrice;
 
+            //    if (tradeInAmount < 0)
+            //    {
+            //        throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
+            //    }
+               this.tradeInAmount = tradeInAmount;
 
-            if (tradeInAmount < 0)
-            {
-                throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
-            }
-            this.tradeInAmount = tradeInAmount;
+            //    if (salesTaxRate < 0)
+            //    {
+            //        throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
+            //    }
 
-            if (salesTaxRate < 0)
-            {
-                throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
-            }
+            //    if (salesTaxRate > 1)
+            //    {
+            //        throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
+            //    }
 
-            if (salesTaxRate > 1)
-            {
-                throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
-            }
-
-            this.salesTaxRate = salesTaxRate;
-
+                this.salesTaxRate = salesTaxRate;
         }
     }
 }
