@@ -53,8 +53,6 @@ namespace Charriere.Stephanie.Business
 
         /// <summary>  Gets and sets the accessories that were chosen.
         /// </summary>
-        /// ArgumentOutOfRangeException - Thrown when the property is set to less than 0. Message: “The value cannot be less than 0.”
-        /// Parameter Name: “value”
         public Accessories AccessoriesChosen
         {
             get { return this.accessoriesChosen; }
@@ -73,7 +71,6 @@ namespace Charriere.Stephanie.Business
         /// <summary>
         /// Gets and sets the accessories that were chosen.
         /// </summary>
-        /// System.ComponentModel.InvalidEnumArgumentException - Thrown when the property is set to an invalid value. Message: “The value is an invalid enumeration value”.
         public ExteriorFinish ExteriorFinishChosen
         {
             get { return this.exteriorFinishChosen; }
@@ -132,7 +129,7 @@ namespace Charriere.Stephanie.Business
                 {
                     return stereoSystem + leatherInterior + computerNavigation;
                 }
-                else //if (accessoriesChosen == Accessories.None)
+                else 
                 {
                     return none;
                 }
@@ -160,7 +157,7 @@ namespace Charriere.Stephanie.Business
                 {
                     return custom;
                 }
-                else //if (exteriorFinishChosen == ExteriorFinish.None)
+                else 
                 {
                     return none;
                 }
@@ -170,7 +167,7 @@ namespace Charriere.Stephanie.Business
         /// <summary> Gets the sum of the cost of the chosen accessories and exterior finish (rounded to two decimal places). </summary>
         public decimal TotalOptions
         {
-            get { return FinishCost + AccessoryCost; }
+            get { return Math.Round(FinishCost + AccessoryCost, 2); }
         }
 
         /// <summary>
@@ -178,7 +175,7 @@ namespace Charriere.Stephanie.Business
         /// </summary>
         public decimal SubTotal
         {
-            get { return VehicleSalePrice + TotalOptions; }
+            get { return Math.Round(VehicleSalePrice + TotalOptions, 2); }
         }
 
         /// <summary>
@@ -187,14 +184,9 @@ namespace Charriere.Stephanie.Business
         public decimal SalesTax
         {
             get
-            { // pretty sure this was added in error
-                //if (this.salesTaxRate <= 0)
-                //{
-                //    throw new ArgumentOutOfRangeException(
-                //        "The value cannot be less than or equal to 0."
-                //    );
-                //}
-                return SubTotal * salesTaxRate;
+            {
+
+                return Math.Round(SubTotal * salesTaxRate, 2) ;
             }
         }
 
@@ -211,16 +203,21 @@ namespace Charriere.Stephanie.Business
         /// </summary>
         public decimal AmountDue
         {
-            get { return Total - TradeInAmount; }
+            get { return Math.Round(Total - TradeInAmount, 2); }
         }
 
-        //             ArgumentOutOfRangeException - Thrown when the vehicle sale price is less than or equal to 0.Message: “The argument cannot be less than or equal to 0.” Parameter name: “vehicleSalePrice”.
-        //             ArgumentOutOfRangeException - Thrown when the trade in amount is less than 0.Message: “The argument cannot be less than 0.” Parameter name: “tradeInAmount”.
-        //            ArgumentOutOfRangeException - Thrown when the sales tax rate is less than 0.Message: “The argument cannot be less than 0.” Parameter name: “salesTaxRate”.
-        //            ArgumentOutOfRangeException - Thrown when the sales tax rate is greater than 1.Message: “The argument cannot be greater than 1.” Parameter name: “salesTaxRate”.
-        //             System.ComponentModel.InvalidEnumArgumentException - Thrown when the accessories chosen is an invalid argument.Message: “The argument is an invalid enumeration value”.
-        //             System.ComponentModel.InvalidEnumArgumentException - Thrown when the exterior finish chosen is an invalid argument.Message: “The argument is an invalid enumeration value”.
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SalesQuote"/> class with all parameters specified.
+        /// </summary>
+        /// <param name="vehicleSalePrice">The sale price of the vehicle. Must be greater than 0.</param>
+        /// <param name="tradeInAmount">The trade-in value of the vehicle. Must be 0 or greater.</param>
+        /// <param name="salesTaxRate">The applicable sales tax rate as a decimal (e.g., 0.07 for 7%).</param>
+        /// <param name="accessoriesChosen">The selected accessories for the vehicle.</param>
+        /// <param name="exteriorFinishChosen">The chosen exterior finish.</param>
+        /// <exception cref="InvalidEnumArgumentException">
+        /// Thrown when <paramref name="vehicleSalePrice"/> is less than or equal to 0,
+        /// or when <paramref name="tradeInAmount"/> is less than 0.
+        /// </exception>
         public SalesQuote(
             decimal vehicleSalePrice,
             decimal tradeInAmount,
@@ -229,86 +226,38 @@ namespace Charriere.Stephanie.Business
             ExteriorFinish exteriorFinishChosen
         )
         {
-            //if (vehicleSalePrice <= 0)
-            //{
-            //    throw new ArgumentOutOfRangeException(
-            //        "The argument cannot be less than or equal to 0."
-            //    );
-            //}
-            this.vehicleSalePrice = vehicleSalePrice;
+            this.VehicleSalePrice = vehicleSalePrice;
 
-            //if (tradeInAmount < 0)
-            //{
-            //    throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
-            //}
-            this.tradeInAmount = tradeInAmount;
+            this.TradeInAmount = tradeInAmount;
 
-            //if (salesTaxRate < 0)
-            //{
-            //    throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
-            //}
-
-            //if (salesTaxRate > 1)
-            //{
-            //    throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
-            //}
             this.salesTaxRate = salesTaxRate;
 
-            //if (!Enum.IsDefined(typeof(Accessories), accessoriesChosen))
-            //{
-            //    throw new System.ComponentModel.InvalidEnumArgumentException(
-            //        "The argument is an invalid enumeration value"
-            //    );
-            //}
+            this.AccessoriesChosen = accessoriesChosen;
 
-            this.accessoriesChosen = accessoriesChosen;
-
-            //if (!Enum.IsDefined(typeof(ExteriorFinish), exteriorFinishChosen))
-            //{
-            //    throw new System.ComponentModel.InvalidEnumArgumentException(
-            //        "The argument is an invalid enumeration value"
-            //    );
-            //}
-            this.exteriorFinishChosen = exteriorFinishChosen;
+            this.ExteriorFinishChosen = exteriorFinishChosen;
         }
 
         /// <summary>
-        ///
+        /// Initializes a new instance of the <see cref="SalesQuote"/> class with basic parameters, 
+        /// defaulting accessories and exterior finish to <see cref="Accessories.None"/> and <see cref="ExteriorFinish.None"/>.
         /// </summary>
-        /// <param name="vehicleSalePrice"></param>
-        /// <param name="tradeInAmount"></param>
-        /// <param name="salesTaxRate"></param>
-        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        /// <param name="vehicleSalePrice">The sale price of the vehicle. Must be greater than 0.</param>
+        /// <param name="tradeInAmount">The trade-in value of the vehicle. Must be 0 or greater.</param>
+        /// <param name="salesTaxRate">The applicable sales tax rate as a decimal (e.g., 0.07 for 7%).</param>
+        /// <exception cref="InvalidEnumArgumentException">
+        /// Thrown when <paramref name="vehicleSalePrice"/> is less than or equal to 0,
+        /// or when <paramref name="tradeInAmount"/> is less than 0.
+        /// </exception>
         public SalesQuote(decimal vehicleSalePrice, decimal tradeInAmount, decimal salesTaxRate)
         {
             exteriorFinishChosen = ExteriorFinish.None;
             accessoriesChosen = Accessories.None;
 
-            //    if (vehicleSalePrice <= 0)
-            //    {
-            //        throw new ArgumentOutOfRangeException(
-            //            "The argument cannot be less than or equal to 0."
-            //        );
-            //    }
-                this.vehicleSalePrice = vehicleSalePrice;
+            this.VehicleSalePrice = vehicleSalePrice;
 
-            //    if (tradeInAmount < 0)
-            //    {
-            //        throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
-            //    }
-               this.tradeInAmount = tradeInAmount;
+            this.TradeInAmount = tradeInAmount;
 
-            //    if (salesTaxRate < 0)
-            //    {
-            //        throw new ArgumentOutOfRangeException("The argument cannot be less than 0.");
-            //    }
-
-            //    if (salesTaxRate > 1)
-            //    {
-            //        throw new ArgumentOutOfRangeException("The argument cannot be greater than 1.");
-            //    }
-
-                this.salesTaxRate = salesTaxRate;
+            this.salesTaxRate = salesTaxRate;
         }
     }
 }
