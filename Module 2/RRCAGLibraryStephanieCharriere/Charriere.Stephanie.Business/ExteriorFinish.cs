@@ -1,4 +1,4 @@
-﻿namespace Charreire.Stephanie.Business
+﻿namespace Charriere.Stephanie.Business
 {
     public enum ExteriorFinish
     {
